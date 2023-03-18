@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D43B308229C4461E00F486BB /* ScrollinLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43B308129C4461E00F486BB /* ScrollinLanguages.swift */; };
+		D48EDBA029C1A463008A6704 /* PaylovApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDB9F29C1A463008A6704 /* PaylovApp.swift */; };
+		D48EDBA229C1A463008A6704 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBA129C1A463008A6704 /* LanguageView.swift */; };
+		D48EDBA429C1A466008A6704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48EDBA329C1A466008A6704 /* Assets.xcassets */; };
+		D48EDBA729C1A466008A6704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48EDBA629C1A466008A6704 /* Preview Assets.xcassets */; };
+		D48EDBAE29C1B4C3008A6704 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBAD29C1B4C3008A6704 /* SplashScreenView.swift */; };
+		D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */; };
+		D48EDBBA29C1FD5F008A6704 /* RegistrationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBB929C1FD5F008A6704 /* RegistrationPage.swift */; };
+		D48EDBD629C34A22008A6704 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBD529C34A22008A6704 /* Animation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D43B308129C4461E00F486BB /* ScrollinLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollinLanguages.swift; sourceTree = "<group>"; };
+		D48EDB9C29C1A463008A6704 /* Paylov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paylov.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48EDB9F29C1A463008A6704 /* PaylovApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylovApp.swift; sourceTree = "<group>"; };
+		D48EDBA129C1A463008A6704 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
+		D48EDBA329C1A466008A6704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48EDBA629C1A466008A6704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D48EDBAD29C1B4C3008A6704 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
+		D48EDBB929C1FD5F008A6704 /* RegistrationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPage.swift; sourceTree = "<group>"; };
+		D48EDBD529C34A22008A6704 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D48EDB9929C1A463008A6704 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D48EDB9329C1A463008A6704 = {
+			isa = PBXGroup;
+			children = (
+				D48EDB9E29C1A463008A6704 /* Paylov */,
+				D48EDB9D29C1A463008A6704 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D48EDB9D29C1A463008A6704 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D48EDB9C29C1A463008A6704 /* Paylov.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D48EDB9E29C1A463008A6704 /* Paylov */ = {
+			isa = PBXGroup;
+			children = (
+				D48EDB9F29C1A463008A6704 /* PaylovApp.swift */,
+				D48EDBAD29C1B4C3008A6704 /* SplashScreenView.swift */,
+				D48EDBD529C34A22008A6704 /* Animation.swift */,
+				D48EDBA129C1A463008A6704 /* LanguageView.swift */,
+				D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */,
+				D48EDBB929C1FD5F008A6704 /* RegistrationPage.swift */,
+				D43B308129C4461E00F486BB /* ScrollinLanguages.swift */,
+				D48EDBA329C1A466008A6704 /* Assets.xcassets */,
+				D48EDBA529C1A466008A6704 /* Preview Content */,
+			);
+			path = Paylov;
+			sourceTree = "<group>";
+		};
+		D48EDBA529C1A466008A6704 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D48EDBA629C1A466008A6704 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D48EDB9B29C1A463008A6704 /* Paylov */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D48EDBAA29C1A466008A6704 /* Build configuration list for PBXNativeTarget "Paylov" */;
+			buildPhases = (
+				D48EDB9829C1A463008A6704 /* Sources */,
+				D48EDB9929C1A463008A6704 /* Frameworks */,
+				D48EDB9A29C1A463008A6704 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Paylov;
+			productName = Paylov;
+			productReference = D48EDB9C29C1A463008A6704 /* Paylov.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D48EDB9429C1A463008A6704 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					D48EDB9B29C1A463008A6704 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = D48EDB9729C1A463008A6704 /* Build configuration list for PBXProject "Paylov" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D48EDB9329C1A463008A6704;
+			productRefGroup = D48EDB9D29C1A463008A6704 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D48EDB9B29C1A463008A6704 /* Paylov */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D48EDB9A29C1A463008A6704 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48EDBA729C1A466008A6704 /* Preview Assets.xcassets in Resources */,
+				D48EDBA429C1A466008A6704 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D48EDB9829C1A463008A6704 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48EDBBA29C1FD5F008A6704 /* RegistrationPage.swift in Sources */,
+				D48EDBA229C1A463008A6704 /* LanguageView.swift in Sources */,
+				D48EDBA029C1A463008A6704 /* PaylovApp.swift in Sources */,
+				D48EDBD629C34A22008A6704 /* Animation.swift in Sources */,
+				D48EDBAE29C1B4C3008A6704 /* SplashScreenView.swift in Sources */,
+				D43B308229C4461E00F486BB /* ScrollinLanguages.swift in Sources */,
+				D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D48EDBA829C1A466008A6704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D48EDBA929C1A466008A6704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D48EDBAB29C1A466008A6704 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Paylov/Preview Content\"";
+				DEVELOPMENT_TEAM = 9W4LY938NZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.habib.Paylov;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D48EDBAC29C1A466008A6704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Paylov/Preview Content\"";
+				DEVELOPMENT_TEAM = 9W4LY938NZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.habib.Paylov;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D48EDB9729C1A463008A6704 /* Build configuration list for PBXProject "Paylov" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48EDBA829C1A466008A6704 /* Debug */,
+				D48EDBA929C1A466008A6704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D48EDBAA29C1A466008A6704 /* Build configuration list for PBXNativeTarget "Paylov" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48EDBAB29C1A466008A6704 /* Debug */,
+				D48EDBAC29C1A466008A6704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D48EDB9429C1A463008A6704 /* Project object */;
+}
