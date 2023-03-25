@@ -9,7 +9,20 @@ import SwiftUI
 
 struct RegistrationPage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+            
+            VStack{
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.white.opacity(0.12))
+                    .frame(width: 335, height: 44)
+                // Add any content here, for example:
+                Text("Hello, World!")
+                    .foregroundColor(.black)
+            }
+            .frame(width: 335, height: 44)
+            .offset(y: 26)
+            
+        
     }
 }
 

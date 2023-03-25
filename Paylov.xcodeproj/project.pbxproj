@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D43B308229C4461E00F486BB /* ScrollinLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43B308129C4461E00F486BB /* ScrollinLanguages.swift */; };
 		D48EDBA029C1A463008A6704 /* PaylovApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDB9F29C1A463008A6704 /* PaylovApp.swift */; };
 		D48EDBA229C1A463008A6704 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBA129C1A463008A6704 /* LanguageView.swift */; };
 		D48EDBA429C1A466008A6704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48EDBA329C1A466008A6704 /* Assets.xcassets */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D43B308129C4461E00F486BB /* ScrollinLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollinLanguages.swift; sourceTree = "<group>"; };
 		D48EDB9C29C1A463008A6704 /* Paylov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paylov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48EDB9F29C1A463008A6704 /* PaylovApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylovApp.swift; sourceTree = "<group>"; };
 		D48EDBA129C1A463008A6704 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				D48EDBA129C1A463008A6704 /* LanguageView.swift */,
 				D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */,
 				D48EDBB929C1FD5F008A6704 /* RegistrationPage.swift */,
-				D43B308129C4461E00F486BB /* ScrollinLanguages.swift */,
 				D48EDBA329C1A466008A6704 /* Assets.xcassets */,
 				D48EDBA529C1A466008A6704 /* Preview Content */,
 			);
@@ -157,7 +154,6 @@
 				D48EDBA029C1A463008A6704 /* PaylovApp.swift in Sources */,
 				D48EDBD629C34A22008A6704 /* Animation.swift in Sources */,
 				D48EDBAE29C1B4C3008A6704 /* SplashScreenView.swift in Sources */,
-				D43B308229C4461E00F486BB /* ScrollinLanguages.swift in Sources */,
 				D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +291,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,7 +321,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
