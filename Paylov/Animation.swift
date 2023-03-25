@@ -20,6 +20,8 @@ struct AnimationView: View {
                     self.drawAmount = 1
                 }
             
+            
+            // 5 ellipses that are animating
             VStack(spacing: -7.5) {
                 Ellipse()
                     .fill(Color.white)
@@ -67,6 +69,8 @@ struct AnimationView: View {
                         anchor: .center)
                     .animation(.easeInOut(duration: 4))
             }
+            
+        
             .opacity(shouldAnimate ? 0 : 1)
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
@@ -77,6 +81,7 @@ struct AnimationView: View {
                         self.isLoading = false
                     }
                 }
+            
             }
         }
     }

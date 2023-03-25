@@ -1,14 +1,15 @@
 import SwiftUI
 
-struct LanguageView : View {
-    
+struct LanguageView: View {
+
     @State private var languages = ["O´zbekcha", "Qaraqalpaqsha", "Русский", "English"]
     @State private var selectedLanguageIndex = 0
     @State private var selectedLanguage: String?
     @State private var drawAmount: CGFloat = 0.0
-    
+    @State private var navigateToNextPage = false // added state variable to control navigation
+  
     var body: some View {
-   
+        NavigationView{
             ZStack {
                 Image("bImage")
                     .resizable()
@@ -50,20 +51,23 @@ struct LanguageView : View {
                     )
                     .animation(.easeInOut)
                     
-                 
-                        ZStack {
-                            Ellipse()
-                                .stroke(Color("ellipseColor"), lineWidth: 6)
-                                .frame(width: 94, height: 94)
-                            Button(action: {
-                                
-                                // Do something with the selected language
-                                let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
-                                impactFeedbackGenerator.prepare()
-                                impactFeedbackGenerator.impactOccurred()
-                                
-                            })
-                            {
+                    
+                    ZStack {
+                        Ellipse()
+                            .stroke(Color("ellipseColor"), lineWidth: 6)
+                            .frame(width: 94, height: 94)
+                        
+                        Button(action: {
+                            navigateToNextPage = true // set the state variable to trigger navigation
+                            // Do something with the selected language
+                            let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+                            impactFeedbackGenerator.prepare()
+                            impactFeedbackGenerator.impactOccurred()
+                            
+                        })
+                        //closure of button
+                        {
+                            NavigationLink(destination: PhoneNumber()){
                                 ZStack {
                                     Circle()
                                         .fill(Color.white)
@@ -78,23 +82,31 @@ struct LanguageView : View {
                                             self.drawAmount = 1
                                         }
                                     
-                                    Image(systemName: "arrow.right.circle")
-                                        .resizable()
+                                    Image("arrowRIght")
                                         .frame(width: 37, height: 37)
+                                    
                                 }
-                            }
+                            } .navigationBarHidden(true)
                         }
-                        .padding() // next page button
+                        
                     }
                 }
+                
             }
+        }.navigationBarBackButtonHidden(true)
+       
         }
     
+}
 
-        
-        
-        
-        
+struct NextPageView: View { // create the destination view
+    var body: some View {
+        Text("Next Page")
+    }
+    
+}
+      
+
         
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
