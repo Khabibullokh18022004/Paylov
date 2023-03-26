@@ -1,13 +1,12 @@
 import SwiftUI
 
 struct LanguageView: View {
-
+    
     @State private var languages = ["O´zbekcha", "Qaraqalpaqsha", "Русский", "English"]
     @State private var selectedLanguageIndex = 0
     @State private var selectedLanguage: String?
     @State private var drawAmount: CGFloat = 0.0
-    @State private var navigateToNextPage = false // added state variable to control navigation
-  
+    
     var body: some View {
         NavigationView{
             ZStack {
@@ -53,58 +52,53 @@ struct LanguageView: View {
                     
                     
                     ZStack {
+                        
                         Ellipse()
                             .stroke(Color("ellipseColor"), lineWidth: 6)
                             .frame(width: 94, height: 94)
-                        
                         Button(action: {
-                            navigateToNextPage = true // set the state variable to trigger navigation
                             // Do something with the selected language
                             let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
                             impactFeedbackGenerator.prepare()
                             impactFeedbackGenerator.impactOccurred()
                             
                         })
-                        //closure of button
                         {
-                            NavigationLink(destination: PhoneNumber()){
+                            NavigationLink(destination: RegistrationPage()){
                                 ZStack {
-                                    Circle()
-                                        .fill(Color.white)
-                                        .frame(width: 62)
-                                    
-                                    Ellipse()
-                                        .trim(from: 0, to: drawAmount)
-                                        .stroke(Color.white, lineWidth: 6)
-                                        .frame(width: 94, height: 94)
-                                        .animation(Animation.linear(duration: 3))
-                                        .onAppear {
-                                            self.drawAmount = 1
-                                        }
-                                    
-                                    Image("arrowRIght")
-                                        .frame(width: 37, height: 37)
-                                    
+                                  
+                                        
+                                        Circle()
+                                            .fill(Color.white)
+                                            .frame(width: 62)
+                                        
+                                        Ellipse()
+                                            .trim(from: 0, to: drawAmount)
+                                            .stroke(Color.white, lineWidth: 6)
+                                            .frame(width: 94, height: 94)
+                                            .animation(Animation.linear(duration: 3))
+                                            .onAppear {
+                                                self.drawAmount = 1
+                                            }
+                                        
+                                        Image("arrowRIght")
+                                            .frame(width: 37, height: 37)
+                                        
+                                    }
                                 }
-                            } .navigationBarHidden(true)
+                                
+                            }
                         }
                         
                     }
                 }
                 
             }
-        }.navigationBarBackButtonHidden(true)
-       
         }
-    
-}
-
-struct NextPageView: View { // create the destination view
-    var body: some View {
-        Text("Next Page")
+        
     }
     
-}
+
       
 
         

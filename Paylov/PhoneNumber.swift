@@ -5,7 +5,7 @@ struct PhoneNumber: View {
     @State private var shouldShowRegistrationPage = false
     @State private var shouldShowNextButton = false
     @State private var registeredUsers = ["977052418", "977552158"]
-    @State private var isLoading = false
+   
     
     var body: some View {
         NavigationView {
@@ -20,7 +20,7 @@ struct PhoneNumber: View {
                     Text("Вход")
                         .foregroundColor(.white)
                     
-                        .bold(true)
+                     //   .bold(true)
                     VStack{
                         Image("paylovLogo")
                         Text("Благие поступки в каждом платеже")
@@ -53,21 +53,9 @@ struct PhoneNumber: View {
                                     .font(.system(size: 16))
                                     .foregroundColor(.white)
                                     .padding(.horizontal)
-                                if isLoading {
-                                    Image(systemName: "arrow.clockwise.circle.fill")
-                                        .foregroundColor(.blue)
-                                        .rotationEffect(.degrees(360))
-                                        .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
-                                        .padding(.trailing, 8)
-                                }
+                             
                                
                             }
-//                            .onTapGesture {
-//                                isLoading = true
-//                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                                    isLoading = false
-//                                }
-//                            }
                             .padding(.horizontal)
                         }
                         .frame(width: 345, height: 44)
@@ -91,6 +79,7 @@ struct PhoneNumber: View {
                             }
                         }
                     }
+                    
                 }
                 else {
                     

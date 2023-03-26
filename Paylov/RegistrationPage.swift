@@ -12,7 +12,7 @@ struct RegistrationPage: View {
 
             
        Text("This is our registration page")
-        
+            .navigationBarBackButtonHidden(true)
     }
 }
 
