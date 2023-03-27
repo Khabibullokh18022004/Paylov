@@ -9,15 +9,21 @@ struct LanguageView: View {
     
     var body: some View {
         NavigationView{
+           
+
             ZStack {
+              //  Image("LeftArrow")
                 Image("bImage")
                     .resizable()
                     .ignoresSafeArea()
+                
+             
                 VStack {
+                   
                     Spacer(minLength: 250)
                     Image("paylovLogo")
                     Spacer()
-                    
+                   
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: -10) {
                             Spacer(minLength: 100)
@@ -63,8 +69,9 @@ struct LanguageView: View {
                             impactFeedbackGenerator.impactOccurred()
                             
                         })
-                        {
-                            NavigationLink(destination: RegistrationPage()){
+                            {
+                                NavigationLink(destination: PhoneNumber())
+                                {
                                 ZStack {
                                   
                                         
@@ -76,10 +83,10 @@ struct LanguageView: View {
                                             .trim(from: 0, to: drawAmount)
                                             .stroke(Color.white, lineWidth: 6)
                                             .frame(width: 94, height: 94)
-                                            .animation(Animation.linear(duration: 3))
-                                            .onAppear {
-                                                self.drawAmount = 1
-                                            }
+//                                            .animation(Animation.linear(duration: 3))
+//                                            .onAppear {
+//                                                self.drawAmount = 1
+//                                            }
                                         
                                         Image("arrowRIght")
                                             .frame(width: 37, height: 37)
@@ -93,7 +100,8 @@ struct LanguageView: View {
                     }
                 }
                 
-            }
+            }            .navigationBarBackButtonHidden(true)
+ 
         }
         
     }
