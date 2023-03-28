@@ -63,19 +63,20 @@ struct PhoneNumber: View {
                                         .foregroundColor(Color.white)
                                     
                                     TextField("00-000-00-00", text: $phoneNumber, onEditingChanged: { isEditing in
-                                        isLoading = isEditing
+                                        self.isLoading = isEditing
                                     })
-                                 
                                     
-                                    if isLoading {
-                                                ProgressView()
-                                                    .progressViewStyle(CircularProgressViewStyle())
-                                                    .foregroundColor(.blue)
-                                                    .padding(.trailing, 8)
-                                            }
-                                   
+                                    
+                                    if isLoading  {
+                                        // Whenever user enter inside of textfield
+                                        ProgressView()
+                                            .progressViewStyle(CircularProgressViewStyle())
+                                            .foregroundColor(.blue)
+                                            .padding(.trailing, 8)
+                                    }
+                                    
                                 }.foregroundColor(Color.white)
-                                .padding(.horizontal)
+                                    .padding(.horizontal)
                             }
                             .frame(width: 345, height: 44)
                             .padding(.top, 26)
@@ -90,7 +91,49 @@ struct PhoneNumber: View {
                             }
                         
                         if isShowingNotification {
-                            PushNotificationLabel()
+                            ZStack() {
+                                
+                                RoundedRectangle(cornerRadius: 16)
+                                    .foregroundColor(Color(red: 1, green: 0.455, blue: 0.455))
+                                    .frame(width: 335, height: 52)
+                                
+                                HStack {
+                                   
+                                    
+                                    Text("Введите номер телефона")
+                                        .font(.custom("Rubik-Regular", size: 14))
+                                        .foregroundColor(.white)
+                                        .kerning(-0.3)
+                                        .frame(width: 269, height: 18)
+                                    
+
+                                  //  Spacer()
+                                }
+                                
+                                .padding(.all, 16)
+                                .background(Color.clear)
+                                
+                                ZStack(alignment: .center)
+                                { Spacer()
+                                  Ellipse()
+                                        .stroke(Color.white, lineWidth: 3)
+                                     
+                                        .frame(width: 32, height: 32)
+                                        
+                                        .opacity(1)
+                                    HStack
+                                    {
+                                        Image("icon_krest")
+                                        .animation(Animation.linear(duration: 3))
+                                       
+                                    }
+                                   
+                                }
+                                
+                            }
+                            .padding(.top, -300)
+                            .padding(.leading, 1)
+                            
                         }
                     }
                     .padding(.all, 20)
@@ -129,30 +172,31 @@ struct PhoneNumber: View {
                             .foregroundColor(.black)
                         HStack(){
                             
-                                Button(action: {
-                                    //to do
-                                })
-                                {
-                                    Text("Регистрация")
-                                    
-                                        .foregroundColor(.white)
-                                        .font(.custom("Rubik-Medium", size: 12))
-                                        .frame(width: 95, height: 32)
-                                        .background(Color(red: 0.106, green: 0.588, blue: 0.518))
-                                        .foregroundColor(.white)
-                                        .cornerRadius(6)
-                                    
-                                }
+                            Button(action: {
+                                //to do
                                 
-                            }.position(x:300, y: 30)
-                        }
-                        //  .padding()
-                        .frame(width: 335, height: 60)
-                        .offset(y:10)
+                            })
+                            {
+                                Text("Регистрация")
+                                
+                                    .foregroundColor(.white)
+                                    .font(.custom("Rubik-Medium", size: 12))
+                                    .frame(width: 95, height: 32)
+                                    .background(Color(red: 0.106, green: 0.588, blue: 0.518))
+                                    .foregroundColor(.white)
+                                    .cornerRadius(6)
+                            
+                            }
+                            
+                        }.position(x:300, y: 30)
                     }
+                    //  .padding()
+                    .frame(width: 335, height: 60)
+                    .offset(y:10)
                 }
-                
- 
+            }
+            
+            
         }
         .navigationBarBackButtonHidden(true)
     }

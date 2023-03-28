@@ -15,7 +15,6 @@
 		D48EDBA729C1A466008A6704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48EDBA629C1A466008A6704 /* Preview Assets.xcassets */; };
 		D48EDBAE29C1B4C3008A6704 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBAD29C1B4C3008A6704 /* SplashScreenView.swift */; };
 		D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */; };
-		D48EDBBA29C1FD5F008A6704 /* TextFieldPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBB929C1FD5F008A6704 /* TextFieldPage.swift */; };
 		D48EDBD629C34A22008A6704 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBD529C34A22008A6704 /* Animation.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		D48EDBA629C1A466008A6704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D48EDBAD29C1B4C3008A6704 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
-		D48EDBB929C1FD5F008A6704 /* TextFieldPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPage.swift; sourceTree = "<group>"; };
 		D48EDBD529C34A22008A6704 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +75,6 @@
 				D48EDBD529C34A22008A6704 /* Animation.swift */,
 				D48EDBA129C1A463008A6704 /* LanguageView.swift */,
 				D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */,
-				D48EDBB929C1FD5F008A6704 /* TextFieldPage.swift */,
 				D432E67529D19E3500A9B5C9 /* RegistrationPage.swift */,
 				D48EDBA329C1A466008A6704 /* Assets.xcassets */,
 				D48EDBA529C1A466008A6704 /* Preview Content */,
@@ -164,7 +161,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48EDBBA29C1FD5F008A6704 /* TextFieldPage.swift in Sources */,
 				D48EDBA229C1A463008A6704 /* LanguageView.swift in Sources */,
 				D48EDBA029C1A463008A6704 /* PaylovApp.swift in Sources */,
 				D48EDBD629C34A22008A6704 /* Animation.swift in Sources */,

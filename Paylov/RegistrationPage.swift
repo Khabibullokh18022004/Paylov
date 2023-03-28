@@ -9,7 +9,14 @@ import SwiftUI
 
 struct RegistrationPage: View {
         var body: some View {
+            
+            
+            
             Text("Hello")
+            
+            
+            
+            
                 .navigationBarBackButtonHidden(true)
         }
 }
