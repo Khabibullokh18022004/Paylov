@@ -7,6 +7,7 @@ struct AnimationView: View {
     @State var isLoading = true
     var body: some View {
         ZStack {
+            
             Ellipse()
                 .stroke(Color("ellipseColor"), lineWidth: 6)
                 .frame(width: 94, height: 94)

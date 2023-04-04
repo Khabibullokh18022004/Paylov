@@ -69,6 +69,8 @@ struct PhoneNumber: View {
                                     
                                     if isLoading  {
                                         // Whenever user enter inside of textfield
+                                        
+                                    //Whenever user entered number it should use progress view
                                         ProgressView()
                                             .progressViewStyle(CircularProgressViewStyle())
                                             .foregroundColor(.blue)
@@ -178,7 +180,7 @@ struct PhoneNumber: View {
                             })
                             {
                                 Text("Регистрация")
-                                
+                                    
                                     .foregroundColor(.white)
                                     .font(.custom("Rubik-Medium", size: 12))
                                     .frame(width: 95, height: 32)
