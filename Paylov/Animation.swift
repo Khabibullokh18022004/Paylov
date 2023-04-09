@@ -16,7 +16,7 @@ struct AnimationView: View {
                 .trim(from: 0, to: drawAmount)
                 .stroke(Color.white, lineWidth: 6)
                 .frame(width: 94, height: 94)
-                .animation(Animation.linear(duration: 3))
+                .animation(Animation.linear(duration: 3.0))
                 .onAppear {
                     self.drawAmount = 1
                 }

@@ -4,9 +4,11 @@ struct PhoneNumber: View {
     @State private var phoneNumber = ""
     @State private var shouldShowRegistrationPage = false
     @State private var shouldShowNextButton = false
-    @State private var registeredUsers = ["977052418", "977552158"]
+    @State private var registeredUsers = ["97", "977552158"]
     @State var isShowingNotification = false
     @State private var isLoading = false
+    
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         NavigationView {
@@ -17,10 +19,23 @@ struct PhoneNumber: View {
                     .resizable()
                     .ignoresSafeArea()
                 // my logo
-                NavigationLink(destination : LanguageView()){
-                    VStack{  Image("arrow-leftarrowLeft")
-                    }.position(x: 25, y: 35)
-                }
+                    .navigationBarBackButtonHidden(true)
+                    .toolbar(content:
+                                {
+                        ToolbarItem(placement: .navigationBarLeading)
+                        {
+                            Button(action: {
+                                presentationMode.wrappedValue.dismiss()
+                            },
+                                   label: {
+                                Image("arrow-leftarrowLeft")
+                                    .foregroundColor(.blue)
+                                
+                            })
+                        }
+                    }
+                    )
+                //Logo and short sentence
                 VStack {
                     
                     Text("Вход")
@@ -29,10 +44,12 @@ struct PhoneNumber: View {
                     //   .bold(true)
                     VStack{
                         Image("paylovLogo")
+                            .resizable()
+                            .frame(width: 129, height:  41.61)
                         Text("Благие поступки в каждом платеже")
                             .foregroundColor(Color.white)
                         
-                    }}.position(x: 200, y: 80)
+                    }}.padding(.bottom, 690)
                 
                 
                 VStack{
@@ -62,21 +79,17 @@ struct PhoneNumber: View {
                                         .bold()
                                         .foregroundColor(Color.white)
                                     
-                                    TextField("00-000-00-00", text: $phoneNumber, onEditingChanged: { isEditing in
-                                        self.isLoading = isEditing
+                                    TextField("00-000-00-00", text: $phoneNumber, onEditingChanged: {_ in
+                                        if phoneNumber.count == 8  {
+                                            // Whenever user enter inside of textfield
+                                            
+                                            //Whenever user entered number it should use progress view
+                                            ProgressView()
+                                                .progressViewStyle(CircularProgressViewStyle())
+                                                .foregroundColor(.blue)
+                                                .padding(.trailing, 8)
+                                        }
                                     })
-                                    
-                                    
-                                    if isLoading  {
-                                        // Whenever user enter inside of textfield
-                                        
-                                    //Whenever user entered number it should use progress view
-                                        ProgressView()
-                                            .progressViewStyle(CircularProgressViewStyle())
-                                            .foregroundColor(.blue)
-                                            .padding(.trailing, 8)
-                                    }
-                                    
                                 }.foregroundColor(Color.white)
                                     .padding(.horizontal)
                             }
@@ -84,13 +97,15 @@ struct PhoneNumber: View {
                             .padding(.top, 26)
                         }.padding(.trailing)
                         
-                            .onChange(of: phoneNumber) { newValue in
-                                if newValue.count <= 9 {
-                                    isShowingNotification = true
-                                } else {
-                                    isShowingNotification = false
-                                }
-                            }
+                        
+                        //showing notification
+                        //                            .onChange(of: phoneNumber) { newValue in
+                        //                                if newValue.count <= 8 {
+                        //                                    isShowingNotification = true
+                        //                                } else {
+                        //                                    isShowingNotification = false
+                        //                                }
+                        //                            }
                         
                         if isShowingNotification {
                             ZStack() {
@@ -98,49 +113,47 @@ struct PhoneNumber: View {
                                 RoundedRectangle(cornerRadius: 16)
                                     .foregroundColor(Color(red: 1, green: 0.455, blue: 0.455))
                                     .frame(width: 335, height: 52)
-                                
                                 HStack {
-                                   
-                                    
                                     Text("Введите номер телефона")
                                         .font(.custom("Rubik-Regular", size: 14))
                                         .foregroundColor(.white)
                                         .kerning(-0.3)
                                         .frame(width: 269, height: 18)
-                                    
-
-                                  //  Spacer()
+                                        .padding(.trailing, 150)
                                 }
                                 
                                 .padding(.all, 16)
                                 .background(Color.clear)
                                 
-                                ZStack(alignment: .center)
+                                ZStack(alignment: .bottom)
                                 { Spacer()
-                                  Ellipse()
-                                        .stroke(Color.white, lineWidth: 3)
-                                     
+                                    Ellipse()
+                                        .stroke(Color.white, lineWidth: 2)
+                                    
                                         .frame(width: 32, height: 32)
-                                        
+                                    
                                         .opacity(1)
                                     HStack
                                     {
+                                        
                                         Image("icon_krest")
-                                        .animation(Animation.linear(duration: 3))
-                                       
+                                            .animation(Animation.linear(duration: 3))
+                                        // .padding( .leading, 280)
+                                        
                                     }
-                                   
-                                }
+                                    
+                                }.padding(.leading, 280)
                                 
                             }
-                            .padding(.top, -300)
+                            .padding(.top, -320)
                             .padding(.leading, 1)
                             
                         }
+                        
                     }
                     .padding(.all, 20)
                     
-                }.position(x: 203, y: 280)
+                }  .position(x: 203, y: 280)
                 if registeredUsers.contains(phoneNumber){
                     NavigationLink(destination: RegistrationPage())
                     {
@@ -151,6 +164,7 @@ struct PhoneNumber: View {
                                 Circle()
                                     .stroke(Color.white, lineWidth: 4)
                                     .frame(width: 100)
+                                
                                 VStack {
                                     Image("arrowRIght")
                                         .foregroundColor(.white)
@@ -158,51 +172,52 @@ struct PhoneNumber: View {
                                 }
                                 
                             }
-                        }
+                        }.padding(.bottom, 30)
+                        
+                        
                     }
                     
                 }
-                else {
+                
+                ZStack (alignment: .leading){
                     
-                    ZStack (alignment: .leading){
-                        
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(Color.white)
-                            .frame(width: 350, height: 60)
-                        // Add any content here, for example:
-                        Text(" Так вы у нас впервые? \n Давайте начнем регистрацию")
-                            .foregroundColor(.black)
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.white)
+                        .frame(width: 350, height: 60)
+                    // Add any content here, for example:
+                    Text(" Так вы у нас впервые? \n Давайте начнем регистрацию")
+                        .foregroundColor(.black)
+                    NavigationLink(destination: RegistrationPage()){
                         HStack(){
-                            
-                            Button(action: {
-                                //to do
+                            Button(action: {},
+                                   
+                                   label: { Text("Регистрация")
                                 
-                            })
-                            {
-                                Text("Регистрация")
-                                    
                                     .foregroundColor(.white)
                                     .font(.custom("Rubik-Medium", size: 12))
                                     .frame(width: 95, height: 32)
                                     .background(Color(red: 0.106, green: 0.588, blue: 0.518))
                                     .foregroundColor(.white)
-                                    .cornerRadius(6)
-                            
-                            }
-                            
+                                .cornerRadius(6)})
                         }.position(x:300, y: 30)
                     }
-                    //  .padding()
-                    .frame(width: 335, height: 60)
-                    .offset(y:10)
                 }
+                .padding(.bottom, 60)
+                .frame(width: 335, height: 60)
+                .offset(y:10)
+                
+                
+             
+                
             }
+            
             
             
         }
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
 
 

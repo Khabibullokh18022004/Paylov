@@ -6,11 +6,10 @@ struct LanguageView: View {
     @State private var selectedLanguageIndex = 0
     @State private var selectedLanguage: String?
     @State private var drawAmount: CGFloat = 0.0
-    
+   // @State var
     var body: some View {
         NavigationView{
            
-
             ZStack {
               //  Image("LeftArrow")
                 Image("bImage")
@@ -22,6 +21,8 @@ struct LanguageView: View {
                    
                     Spacer(minLength: 250)
                     Image("paylovLogo")
+                        .resizable()
+                        .frame(width: 129, height:  41.61)
                     Spacer()
                    
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -48,13 +49,14 @@ struct LanguageView: View {
                             
                             Spacer(minLength: 100)
                         }
-                    } // scroll View
+                    }
+                    // scroll View
                     .background(
                         Capsule()
                             .stroke(Color.white, lineWidth: 3)
                             .frame(width: 170, height: 50)
                     )
-                    .animation(.easeInOut)
+//                    .animation(.easeInOut)
                     
                     
                     ZStack {
@@ -64,7 +66,7 @@ struct LanguageView: View {
                             .frame(width: 94, height: 94)
                         Button(action: {
                             // Do something with the selected language
-                            let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+                            let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
                             impactFeedbackGenerator.prepare()
                             impactFeedbackGenerator.impactOccurred()
                             
@@ -81,13 +83,13 @@ struct LanguageView: View {
                                         
                                         Ellipse()
                                             .trim(from: 0, to: drawAmount)
-                                            .stroke(Color.white, lineWidth: 6)
+                                            .stroke(Color.white, lineWidth: 3)
                                             .frame(width: 94, height: 94)
-//                                            .animation(Animation.linear(duration: 3))
-//                                            .onAppear {
-//                                                self.drawAmount = 1
-//                                            }
-                                        
+                                          //  .animation(Animation.linear(duration: 3))
+                                            .onAppear {
+                                                self.drawAmount = 1
+                                            }
+                                           
                                         Image("arrowRIght")
                                             .frame(width: 37, height: 37)
                                         

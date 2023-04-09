@@ -30,6 +30,8 @@ struct SplashScreenView: View {
                 VStack {
                     Spacer()
                     Image("paylovLogo")
+                        .resizable()
+                        .frame(width: 129, height:  41.61)
                     Spacer(minLength: 150)
                     //Icon on bottom
                     ZStack{
@@ -39,7 +41,7 @@ struct SplashScreenView: View {
                 
                 .onAppear()
                 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.5)
                     {
                         self.isActive = true
                     }
