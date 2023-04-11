@@ -8,72 +8,60 @@
 import SwiftUI
 
 struct RegistrationPage: View {
-    
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
-    @State private var phoneNumber: String = ""
-     @State private var showError: Bool = false
-        var body: some View {
-    
-         //   VStack {
-                
-//                Spacer()
-//                    .navigationBarBackButtonHidden(true)
-//                    .toolbar(content:
-//                                {
-//                        ToolbarItem(placement: .navigationBarLeading)
-//                                    {
-//                            Button(action: {
-//                                presentationMode.wrappedValue.dismiss()
-//                            },
-//                            label: {
-//                                Image("arrow-leftarrowLeft")
-//                                    .foregroundColor(.blue)
-//                                Text("Hello")
-//                            })
-//                        }
-//                    }
-//                    )
-                
-                
-             
-         //   }
-            
+
+    var body: some View {
+        
             VStack {
-                        TextField("Enter your phone number", text: $phoneNumber)
-                            .padding()
-                        
-                        Button("Submit") {
-                            if phoneNumber.count != 8 {
-                                showError = true
-                            }
-                            
+                VStack{
+                    Spacer()
+                    Text("Регистрация")
+                        .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333, opacity: 1))
+                        .font(Font.custom("Rubik-Medium", size: 16))
+                        .kerning(-0.3)
+                        .multilineTextAlignment(.center)
+                        .frame(width: 100, height: 21)
+                        .background(Color.white)
+                }.padding(.bottom, 760)
+//                HStack{
+//                    Rectangle()
+//                        .frame(width: 375, height: 3)
+//                        .foregroundColor(Color.white)
+//                        .background(Color.red)
+//
+//                }.padding(.all)
+                
+                
+                Spacer()
+                    .navigationBarBackButtonHidden(true)
+                    .toolbar(content:
+                                {
+                        ToolbarItem(placement: .navigationBarLeading)
+                        {
+                            Button(action: {
+                                presentationMode.wrappedValue.dismiss()
+                            },
+                                   label: {
+                                Image(systemName: "arrow.backward")
+                                    .foregroundColor(Color.black)
+                                
+                                
+                            })
                         }
-                        
-                        Spacer()
                     }
-                    .animation(.easeOut(duration: 0.3)) // Add animation to the VStack
-                    .overlay(
-                        Group { // Use Group to conditionally display the error notification
-                            if showError {
-                                ZStack {
-                                    Color.red
-                                        .frame(height: 40)
-                                        .animation(.easeOut(duration: 0.3)) // Add animation to the error notification
-                                    Text("Please enter a valid 8-digit phone number")
-                                        .foregroundColor(.white)
-                                }
-                                .transition(.move(edge: .top)) // Add transition to the error notification
-                            }
-                        }
-                        .onTapGesture {
-                            withAnimation {
-                                showError = false // Dismiss the error notification when it is tapped
-                            }
-                        }
-                        .frame(maxWidth: .infinity, alignment: .top) // Make the error notification span the entire width of the screen
                     )
-                }
+                
             }
+                
+        NavigationView{
+            HStack
+            {
+                Text("Hello")
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+           }
+    }
             
  
 

@@ -7,6 +7,10 @@ struct PhoneNumber: View {
     @State private var registeredUsers = ["97", "977552158"]
     @State var isShowingNotification = false
     @State private var isLoading = false
+    @State private var password = " "
+    @State private var showPassword = false
+    @State var isSecureField : Bool = true
+    
     
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
@@ -80,10 +84,7 @@ struct PhoneNumber: View {
                                         .foregroundColor(Color.white)
                                     
                                     TextField("00-000-00-00", text: $phoneNumber, onEditingChanged: {_ in
-                                        if phoneNumber.count == 8  {
-                                            // Whenever user enter inside of textfield
-                                            
-                                            //Whenever user entered number it should use progress view
+                                        if isLoading{
                                             ProgressView()
                                                 .progressViewStyle(CircularProgressViewStyle())
                                                 .foregroundColor(.blue)
@@ -96,16 +97,6 @@ struct PhoneNumber: View {
                             .frame(width: 345, height: 44)
                             .padding(.top, 26)
                         }.padding(.trailing)
-                        
-                        
-                        //showing notification
-                        //                            .onChange(of: phoneNumber) { newValue in
-                        //                                if newValue.count <= 8 {
-                        //                                    isShowingNotification = true
-                        //                                } else {
-                        //                                    isShowingNotification = false
-                        //                                }
-                        //                            }
                         
                         if isShowingNotification {
                             ZStack() {
@@ -176,38 +167,74 @@ struct PhoneNumber: View {
                         
                         
                     }
+                    .disabled(true)
                     
-                }
-                
-                ZStack (alignment: .leading){
+                    VStack{
+                        Text(" Пароль")
+                            .font(.custom("Rubik-Medium", size: 14))
+                            .foregroundColor(.white)
+                            .kerning(-0.3)
+                            .position(x:40, y:50)
+                            .lineSpacing(1.1)
+                            .frame(width: 335, height: 18, alignment: .leading)
+                    }.padding(.top, -90)
+                        .padding(.leading, -50)
                     
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.white)
-                        .frame(width: 350, height: 60)
-                    // Add any content here, for example:
-                    Text(" Так вы у нас впервые? \n Давайте начнем регистрацию")
-                        .foregroundColor(.black)
-                    NavigationLink(destination: RegistrationPage()){
-                        HStack(){
-                            Button(action: {},
-                                   
-                                   label: { Text("Регистрация")
+                    VStack {
+//                        Button(action: {
+//                            showPassword.toggle()
+//                        }) {
+//                            Image(systemName: showPassword ? "eye.slash" : "eye")
+//                                .foregroundColor(.white)
+//                        }
+                        SecureField("  Password  ", text: $password)
+                            .foregroundColor(.white)
+                            .frame(width: 345, height: 44)
+                            .background(Color.white.opacity(0.12))
+                            .cornerRadius(8)
+                            .padding(.horizontal)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.green, lineWidth: 1)
+                                    .frame(width: 345, height: 44)
                                 
-                                    .foregroundColor(.white)
-                                    .font(.custom("Rubik-Medium", size: 12))
-                                    .frame(width: 95, height: 32)
-                                    .background(Color(red: 0.106, green: 0.588, blue: 0.518))
-                                    .foregroundColor(.white)
-                                .cornerRadius(6)})
-                        }.position(x:300, y: 30)
-                    }
+                            )
+                        
+                    }.padding(.leading, -8)
+                    
+               
+                        
                 }
-                .padding(.bottom, 60)
-                .frame(width: 335, height: 60)
-                .offset(y:10)
+                else{
+                    ZStack (alignment: .leading){
+                        
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color.white)
+                            .frame(width: 350, height: 60)
+                        // Add any content here, for example:
+                        Text(" Так вы у нас впервые? \n Давайте начнем регистрацию")
+                            .foregroundColor(.black)
+                        NavigationLink(destination: RegistrationPage()){
+                            HStack(){
+                                Button(action: {},
+                                       
+                                       label: { Text("Регистрация")
+                                    
+                                        .foregroundColor(.white)
+                                        .font(.custom("Rubik-Medium", size: 12))
+                                        .frame(width: 95, height: 32)
+                                        .background(Color(red: 0.106, green: 0.588, blue: 0.518))
+                                        .foregroundColor(.white)
+                                    .cornerRadius(6)})
+                            }.position(x:300, y: 30)
+                        }
+                    }
+                    .padding(.bottom, 60)
+                    .frame(width: 335, height: 60)
+                    .offset(y:10)
                 
+            }
                 
-             
                 
             }
             

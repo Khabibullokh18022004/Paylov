@@ -6,6 +6,7 @@ struct LanguageView: View {
     @State private var selectedLanguageIndex = 0
     @State private var selectedLanguage: String?
     @State private var drawAmount: CGFloat = 0.0
+    
    // @State var
     var body: some View {
         NavigationView{
@@ -74,26 +75,21 @@ struct LanguageView: View {
                             {
                                 NavigationLink(destination: PhoneNumber())
                                 {
-                                ZStack {
-                                  
-                                        
-                                        Circle()
-                                            .fill(Color.white)
-                                            .frame(width: 62)
-                                        
-                                        Ellipse()
-                                            .trim(from: 0, to: drawAmount)
-                                            .stroke(Color.white, lineWidth: 3)
-                                            .frame(width: 94, height: 94)
-                                          //  .animation(Animation.linear(duration: 3))
-                                            .onAppear {
-                                                self.drawAmount = 1
-                                            }
-                                           
-                                        Image("arrowRIght")
-                                            .frame(width: 37, height: 37)
-                                        
-                                    }
+                                   
+                                        ZStack {
+                                            Circle()
+                                                .fill(Color.white)
+                                                .frame(width: 62)
+                                            
+                                            Ellipse()
+                                                .trim(from: 0, to: drawAmount)
+                                                .stroke(Color.white, lineWidth: 3)
+                                                .frame(width: 94, height: 94)
+                                            
+                                            Image("arrowRIght")
+                                                .frame(width: 37, height: 37)
+                                        }
+                                   
                                 }
                                 
                             }
