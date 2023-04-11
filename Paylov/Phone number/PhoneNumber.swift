@@ -7,10 +7,10 @@ struct PhoneNumber: View {
     @State private var registeredUsers = ["97", "977552158"]
     @State var isShowingNotification = false
     @State private var isLoading = false
-    @State private var password = " "
+    @State private var password = ""
     @State private var showPassword = false
     @State var isSecureField : Bool = true
-    
+   // @Binding var text :String
     
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
@@ -181,29 +181,43 @@ struct PhoneNumber: View {
                         .padding(.leading, -50)
                     
                     VStack {
-//                        Button(action: {
-//                            showPassword.toggle()
-//                        }) {
-//                            Image(systemName: showPassword ? "eye.slash" : "eye")
-//                                .foregroundColor(.white)
-//                        }
-                        SecureField("  Password  ", text: $password)
-                            .foregroundColor(.white)
-                            .frame(width: 345, height: 44)
-                            .background(Color.white.opacity(0.12))
-                            .cornerRadius(8)
-                            .padding(.horizontal)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.green, lineWidth: 1)
-                                    .frame(width: 345, height: 44)
-                                
-                            )
+                                                Button(action: {
+                                                    showPassword.toggle()
+                                                }) {
+                                                    Image(systemName: showPassword ? "eye.slash" : "eye")
+                                                        .foregroundColor(.white)
+                                                       
+                                                }
+                                                .padding(.leading, 290)
+                            
                         
-                    }.padding(.leading, -8)
+                            SecureField("  Password  ", text: $password)
+                                .foregroundColor(.white)
+                                .frame(width: 345, height: 44)
+                                .background(Color.white.opacity(0.12))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.green, lineWidth: 1)
+                                        .frame(width: 345, height: 44)
+                                )
                     
-               
-                        
+                        }.padding(.leading, -8)
+                    
+                    NavigationLink (destination:  LanguageView())
+                    {
+                        HStack
+                        {Spacer()
+                            Text("Забыли пароль?")
+                                .font(.custom("Rubik-Regular", size: 14))
+                                .foregroundColor(.white)
+                                .kerning(-0.3)
+                                .lineSpacing(19.8)
+                                .frame(width: 106, height: 18)
+                                .padding(.top, 90)
+                        }.padding(.trailing, 30)
+                    }
                 }
                 else{
                     ZStack (alignment: .leading){
@@ -214,18 +228,19 @@ struct PhoneNumber: View {
                         // Add any content here, for example:
                         Text(" Так вы у нас впервые? \n Давайте начнем регистрацию")
                             .foregroundColor(.black)
-                        NavigationLink(destination: RegistrationPage()){
+                       
                             HStack(){
-                                Button(action: {},
-                                       
-                                       label: { Text("Регистрация")
+                                Button(action: {})
+                                {
+                                NavigationLink(destination: RegistrationPage()){
+                                 Text("Регистрация")
                                     
                                         .foregroundColor(.white)
                                         .font(.custom("Rubik-Medium", size: 12))
                                         .frame(width: 95, height: 32)
                                         .background(Color(red: 0.106, green: 0.588, blue: 0.518))
                                         .foregroundColor(.white)
-                                    .cornerRadius(6)})
+                                    .cornerRadius(6)}
                             }.position(x:300, y: 30)
                         }
                     }
