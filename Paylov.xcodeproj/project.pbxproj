@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D432E67629D19E3500A9B5C9 /* RegistrationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D432E67529D19E3500A9B5C9 /* RegistrationPage.swift */; };
+		D474D9AF29E65E6D00599C28 /* LogicTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D9AE29E65E6D00599C28 /* LogicTextField.swift */; };
+		D474D9B129E66C3100599C28 /* Trust.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D9B029E66C3100599C28 /* Trust.swift */; };
 		D476214929E3450900E6721D /* ErrorNotificationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476214829E3450900E6721D /* ErrorNotificationTextField.swift */; };
 		D48EDBA029C1A463008A6704 /* PaylovApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDB9F29C1A463008A6704 /* PaylovApp.swift */; };
 		D48EDBA229C1A463008A6704 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBA129C1A463008A6704 /* LanguageView.swift */; };
@@ -35,6 +37,8 @@
 		D463CEB629E553580071A74A /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		D463CEB729E553580071A74A /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
 		D463CEC629E5539B0071A74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		D474D9AE29E65E6D00599C28 /* LogicTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicTextField.swift; sourceTree = "<group>"; };
+		D474D9B029E66C3100599C28 /* Trust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trust.swift; sourceTree = "<group>"; };
 		D476214829E3450900E6721D /* ErrorNotificationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNotificationTextField.swift; sourceTree = "<group>"; };
 		D48EDB9C29C1A463008A6704 /* Paylov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paylov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48EDB9F29C1A463008A6704 /* PaylovApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaylovApp.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 			children = (
 				D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */,
 				D476214829E3450900E6721D /* ErrorNotificationTextField.swift */,
+				D474D9AE29E65E6D00599C28 /* LogicTextField.swift */,
+				D474D9B029E66C3100599C28 /* Trust.swift */,
 			);
 			path = "Phone number";
 			sourceTree = "<group>";
@@ -211,7 +217,9 @@
 				D48EDBD629C34A22008A6704 /* Animation.swift in Sources */,
 				D48EDBAE29C1B4C3008A6704 /* SplashScreenView.swift in Sources */,
 				D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */,
+				D474D9B129E66C3100599C28 /* Trust.swift in Sources */,
 				D432E67629D19E3500A9B5C9 /* RegistrationPage.swift in Sources */,
+				D474D9AF29E65E6D00599C28 /* LogicTextField.swift in Sources */,
 				D476214929E3450900E6721D /* ErrorNotificationTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

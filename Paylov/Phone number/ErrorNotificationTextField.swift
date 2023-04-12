@@ -10,6 +10,8 @@ import SwiftUI
 struct ErrorNotificationTextField: View {
     @State private var phoneNumber: String = ""
      @State private var showError: Bool = false
+    @State private var ellipseSize: CGFloat = 0
+    @State private var isAnimating = false
         var body: some View {
 
             
@@ -51,18 +53,22 @@ struct ErrorNotificationTextField: View {
                                         }    .padding(.leading, -260)
                                         Spacer()
                                         Ellipse()
+
                                             .stroke(Color.white, lineWidth: 2)
-                                        
                                             .frame(width: 32, height: 32)
+
+                                          
                                         
-                                            .opacity(1)
+                                            
+                                            
+                                           
+                                         
                                         Spacer()
                                         HStack
                                         {
                                             
                                             Image("icon_krest")
                                                 .animation(Animation.linear(duration: 3))
-                                            // .padding( .leading, 280)
                                             
                                         }.padding(.top, 3 )
                                     
@@ -70,7 +76,7 @@ struct ErrorNotificationTextField: View {
                                     }.padding(.leading, 280)
                                         .animation(.easeOut(duration: 0.3))
                                 }  .padding(.bottom, 650)
-                                   // .padding(.leading, 1)
+                                  
                                 .transition(.move(edge: .top))
                             }
                         }

@@ -1,17 +1,18 @@
 import SwiftUI
 
 struct PhoneNumber: View {
-    @State private var phoneNumber = ""
+    @State private var phoneNumberInput = ""
     @State private var shouldShowRegistrationPage = false
     @State private var shouldShowNextButton = false
-    @State private var registeredUsers = ["97", "977552158"]
+    @State private var registeredUsers = ["1", "977552158"]
+    @State private var passwordUsers = ["1","4567"]
     @State var isShowingNotification = false
     @State private var isLoading = false
     @State private var password = ""
     @State private var showPassword = false
     @State var isSecureField : Bool = true
-   // @Binding var text :String
-    
+    @State private var pphoneNumberInput: String = ""
+    @State var ShowingBottomSheet = false
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
     var body: some View {
@@ -55,7 +56,7 @@ struct PhoneNumber: View {
                         
                     }}.padding(.bottom, 690)
                 
-                
+                //function
                 VStack{
                     HStack{
                         Text("Номер телефона")
@@ -82,15 +83,17 @@ struct PhoneNumber: View {
                                     Text("+998")
                                         .bold()
                                         .foregroundColor(Color.white)
-                                    
-                                    TextField("00-000-00-00", text: $phoneNumber, onEditingChanged: {_ in
-                                        if isLoading{
-                                            ProgressView()
-                                                .progressViewStyle(CircularProgressViewStyle())
-                                                .foregroundColor(.blue)
-                                                .padding(.trailing, 8)
+                                    TextField("00-000-00-00", text: $phoneNumberInput)
+                                    .keyboardType(.numberPad)
+                                
+                                    .onChange (of: phoneNumberInput)
+                                    { newValue in
+                                            if phoneNumberInput.count > 9 {
+                                                phoneNumberInput = String(phoneNumberInput.prefix(9))
+                                            }
                                         }
-                                    })
+                                    
+                                    
                                 }.foregroundColor(Color.white)
                                     .padding(.horizontal)
                             }
@@ -145,29 +148,11 @@ struct PhoneNumber: View {
                     .padding(.all, 20)
                     
                 }  .position(x: 203, y: 280)
-                if registeredUsers.contains(phoneNumber){
-                    NavigationLink(destination: RegistrationPage())
-                    {
-                        VStack{
-                            Spacer()
-                            
-                            ZStack {
-                                Circle()
-                                    .stroke(Color.white, lineWidth: 4)
-                                    .frame(width: 100)
-                                
-                                VStack {
-                                    Image("arrowRIght")
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 55))
-                                }
-                                
-                            }
-                        }.padding(.bottom, 30)
-                        
-                        
-                    }
-                    .disabled(true)
+                
+                if registeredUsers.contains(phoneNumberInput){
+                    
+                    
+                 
                     
                     VStack{
                         Text(" Пароль")
@@ -179,20 +164,30 @@ struct PhoneNumber: View {
                             .frame(width: 335, height: 18, alignment: .leading)
                     }.padding(.top, -90)
                         .padding(.leading, -50)
-                    
-                    VStack {
-                                                Button(action: {
-                                                    showPassword.toggle()
-                                                }) {
-                                                    Image(systemName: showPassword ? "eye.slash" : "eye")
-                                                        .foregroundColor(.white)
-                                                       
-                                                }
-                                                .padding(.leading, 290)
-                            
+                    VStack{
+                        Button(action : {}){
+                            NavigationLink (destination:  LanguageView())
+                            {
+                                HStack
+                                {Spacer()
+                                    Text("Забыли пароль?")
+                                        .font(.custom("Rubik-Regular", size: 14))
+                                        .foregroundColor(.white)
+                                        .kerning(-0.3)
+                                        .lineSpacing(19.8)
+                                        .frame(width: 106, height: 18)
+                                        .padding(.top, 90)
+                                }.padding(.trailing, 30)
+                            }
+                        }
+                    }.padding(.top, 30)
+                    ZStack {
                         
-                            SecureField("  Password  ", text: $password)
+                        if self.showPassword
+                        {
+                            TextField("  Password  ", text: $password  )
                                 .foregroundColor(.white)
+                            
                                 .frame(width: 345, height: 44)
                                 .background(Color.white.opacity(0.12))
                                 .cornerRadius(8)
@@ -202,22 +197,100 @@ struct PhoneNumber: View {
                                         .stroke(Color.green, lineWidth: 1)
                                         .frame(width: 345, height: 44)
                                 )
-                    
-                        }.padding(.leading, -8)
-                    
-                    NavigationLink (destination:  LanguageView())
-                    {
-                        HStack
-                        {Spacer()
-                            Text("Забыли пароль?")
-                                .font(.custom("Rubik-Regular", size: 14))
-                                .foregroundColor(.white)
-                                .kerning(-0.3)
-                                .lineSpacing(19.8)
-                                .frame(width: 106, height: 18)
-                                .padding(.top, 90)
-                        }.padding(.trailing, 30)
-                    }
+                            
+                            Trust()
+                            
+                        }
+                            else{
+                                SecureField("  Password  ", text: $password)
+                                    .foregroundColor(.white)
+                                    .frame(width: 345, height: 44)
+                                    .background(Color.white.opacity(0.12))
+                                    .cornerRadius(8)
+                                    .padding(.horizontal)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(Color.green, lineWidth: 1)
+                                            .frame(width: 345, height: 44)
+                                    )
+                                Trust()
+                            }
+                            Button(action: {
+                                self.showPassword.toggle()
+                            }) {
+                                Image(systemName: showPassword ? "eye.slash" : "eye")
+                                    .foregroundColor(.white)
+                                
+                            }
+                            .padding(.leading, 290)
+                            
+                        }.padding(.top, 10)
+               
+                    if  passwordUsers.contains(password){
+                        Button(action:
+                                {ShowingBottomSheet.toggle()})
+                               {
+                            VStack{
+                                Spacer()
+                                
+                                ZStack {
+                                    Circle()
+                                        .stroke(Color.white, lineWidth: 4)
+                                        .frame(width: 100)
+                                    
+                                    VStack {
+                                        Image("arrowRIght")
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 55))
+                                    }
+                                    
+                                }
+                            }.padding(.bottom, 30)
+                            
+                            
+                        }
+                               .sheet(isPresented: $ShowingBottomSheet)
+                        {
+                            
+                            //Image("call")
+                            VStack {
+                                VStack{
+                                    Spacer()
+                                    Text("Регистрация")
+                                        .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333, opacity: 1))
+                                        .font(Font.custom("Rubik-Medium", size: 16))
+                                        .kerning(-0.3)
+                                        .multilineTextAlignment(.center)
+                                        .frame(width: 100, height: 21)
+                                        .background(Color.white)
+                                }.padding(.bottom, 680)
+
+                                    .toolbar
+                                                {
+                                        ToolbarItem(placement: .navigationBarLeading)
+                                        {
+                                            Button(action: {
+                                                presentationMode.wrappedValue.dismiss()
+                                            },
+                                                   label: {
+                                                Text("Отмена")
+                                                    .foregroundColor(Color.black)
+                                                
+                                                
+                                            })
+                                        }
+                                    }
+                                    
+                                
+                            }
+                            
+                        }
+                               }
+//                    else
+//                    {
+//                        Text("Error")
+//                    }
+                
                 }
                 else{
                     ZStack (alignment: .leading){
@@ -229,10 +302,11 @@ struct PhoneNumber: View {
                         Text(" Так вы у нас впервые? \n Давайте начнем регистрацию")
                             .foregroundColor(.black)
                        
-                            HStack(){
+                            
                                 Button(action: {})
                                 {
                                 NavigationLink(destination: RegistrationPage()){
+                                    HStack(){
                                  Text("Регистрация")
                                     
                                         .foregroundColor(.white)
@@ -250,7 +324,7 @@ struct PhoneNumber: View {
                 
             }
                 
-                
+              
             }
             
             
@@ -258,9 +332,20 @@ struct PhoneNumber: View {
         }
         .navigationBarBackButtonHidden(true)
     }
+    func formatInputValue(_ value: String) -> String {
+        var formatted = value
+        if formatted.count >= 2 {
+            formatted.insert("-", at: formatted.index(formatted.startIndex, offsetBy: 2))
+        }
+        if formatted.count >= 6 {
+            formatted.insert("-", at: formatted.index(formatted.startIndex, offsetBy: 6))
+        }
+        if formatted.count >= 9 {
+            formatted.insert("-", at: formatted.index(formatted.startIndex, offsetBy: 9))
+        }
+        return formatted
+    }
 }
-
-
 
 
 

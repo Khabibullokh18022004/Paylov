@@ -12,7 +12,11 @@ struct RegistrationPage: View {
 
     var body: some View {
         
-            VStack {
+        VStack {
+          
+            
+            HStack
+            {
                 VStack{
                     Spacer()
                     Text("Регистрация")
@@ -22,45 +26,49 @@ struct RegistrationPage: View {
                         .multilineTextAlignment(.center)
                         .frame(width: 100, height: 21)
                         .background(Color.white)
-                }.padding(.bottom, 760)
-//                HStack{
-//                    Rectangle()
-//                        .frame(width: 375, height: 3)
-//                        .foregroundColor(Color.white)
-//                        .background(Color.red)
-//
-//                }.padding(.all)
+                }.padding(.bottom, 460)
                 
-                
-                Spacer()
-                    .navigationBarBackButtonHidden(true)
-                    .toolbar(content:
-                                {
-                        ToolbarItem(placement: .navigationBarLeading)
-                        {
-                            Button(action: {
-                                presentationMode.wrappedValue.dismiss()
-                            },
-                                   label: {
-                                Image(systemName: "arrow.backward")
-                                    .foregroundColor(Color.black)
-                                
-                                
-                            })
-                        }
+//                Text("Информация")
+//                    .foregroundColor(Color(red: 0.153, green: 0.192, blue: 0.251))
+//                    .font(Font.custom("Rubik-Medium", size: 12))
+//                    .kerning(-0.3)
+//                    .multilineTextAlignment(.center)
+//                    .frame(width: 125, height: 16)
+//                    .background(Color.white)
+            }.padding(.bottom, 300)
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            Spacer()
+                .navigationBarBackButtonHidden(true)
+                .toolbar(content:
+                            {
+                    ToolbarItem(placement: .navigationBarLeading)
+                    {
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        },
+                               label: {
+                            Image(systemName: "arrow.backward")
+                                .foregroundColor(Color.black)
+                            
+                            
+                        })
                     }
-                    )
-                
-            }
-                
-        NavigationView{
-            HStack
-            {
-                Text("Hello")
-            }
+                }
+                         
+                )
+            
         }
-        .navigationBarBackButtonHidden(true)
-           }
+    }
     }
             
  
