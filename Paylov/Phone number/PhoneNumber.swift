@@ -4,16 +4,17 @@ struct PhoneNumber: View {
     @State private var phoneNumberInput = ""
     @State private var shouldShowRegistrationPage = false
     @State private var shouldShowNextButton = false
-    @State private var registeredUsers = ["1", "977552158"]
-    @State private var passwordUsers = ["1","4567"]
+    @State private var registeredUsers = ["97-705-24-18", "97-755-21-58"]
+    @State private var passwordUsers = ["qq2980268","4567"]
     @State var isShowingNotification = false
     @State private var isLoading = false
     @State private var password = ""
     @State private var showPassword = false
     @State var isSecureField : Bool = true
     @State private var pphoneNumberInput: String = ""
-    @State var ShowingBottomSheet = false
+    @State var showingBottomSheet = false
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
+    //@Environment(\.presentationMode2) private var presentationMode2: Binding<PresentationMode2>
     
     var body: some View {
         NavigationView {
@@ -80,21 +81,34 @@ struct PhoneNumber: View {
                                             .stroke(Color.green, lineWidth: 1)
                                     )
                                 HStack {
-                                    Text("+998")
-                                        .bold()
-                                        .foregroundColor(Color.white)
-                                    TextField("00-000-00-00", text: $phoneNumberInput)
-                                    .keyboardType(.numberPad)
-                                
-                                    .onChange (of: phoneNumberInput)
-                                    { newValue in
-                                            if phoneNumberInput.count > 9 {
-                                                phoneNumberInput = String(phoneNumberInput.prefix(9))
-                                            }
-                                        }
-                                    
-                                    
-                                }.foregroundColor(Color.white)
+                                      Text("+998")
+                                          .bold()
+                                          .foregroundColor(Color.white)
+                                      TextField("00-000-00-00", text: $phoneNumberInput)
+                                          .keyboardType(.numberPad)
+                                          .onChange(of: phoneNumberInput )
+                                    { _ in
+                                        if phoneNumberInput.count > 9 {
+                                        phoneNumberInput = String(phoneNumberInput.prefix(9))
+                                    }}
+                                          .onChange(of: phoneNumberInput) { newValue in
+                                          
+                                              let numericString = newValue.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+                                              var formattedString = ""
+
+                                              for (index, digit) in numericString.enumerated() {
+                                                  switch index {
+                                                  case 2, 5, 7:
+                                                      formattedString += "-"
+                                                      fallthrough
+                                                  default:
+                                                      formattedString.append(digit)
+                                                  }
+                                              }
+
+                                              phoneNumberInput = formattedString
+                                          }
+                                  }.foregroundColor(Color.white)
                                     .padding(.horizontal)
                             }
                             .frame(width: 345, height: 44)
@@ -150,10 +164,8 @@ struct PhoneNumber: View {
                 }  .position(x: 203, y: 280)
                 
                 if registeredUsers.contains(phoneNumberInput){
-                    
-                    
-                 
-                    
+               
+    
                     VStack{
                         Text(" Пароль")
                             .font(.custom("Rubik-Medium", size: 14))
@@ -201,35 +213,35 @@ struct PhoneNumber: View {
                             Trust()
                             
                         }
-                            else{
-                                SecureField("  Password  ", text: $password)
-                                    .foregroundColor(.white)
-                                    .frame(width: 345, height: 44)
-                                    .background(Color.white.opacity(0.12))
-                                    .cornerRadius(8)
-                                    .padding(.horizontal)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 8)
-                                            .stroke(Color.green, lineWidth: 1)
-                                            .frame(width: 345, height: 44)
-                                    )
-                                Trust()
-                            }
-                            Button(action: {
-                                self.showPassword.toggle()
-                            }) {
-                                Image(systemName: showPassword ? "eye.slash" : "eye")
-                                    .foregroundColor(.white)
-                                
-                            }
-                            .padding(.leading, 290)
+                        else{
+                            SecureField("  Password  ", text: $password)
+                                .foregroundColor(.white)
+                                .frame(width: 345, height: 44)
+                                .background(Color.white.opacity(0.12))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .stroke(Color.green, lineWidth: 1)
+                                        .frame(width: 345, height: 44)
+                                )
+                            Trust()
+                        }
+                        Button(action: {
+                            self.showPassword.toggle()
+                        }) {
+                            Image(systemName: showPassword ? "eye.slash" : "eye")
+                                .foregroundColor(.white)
                             
-                        }.padding(.top, 10)
-               
+                        }
+                        .padding(.leading, 290)
+                        
+                    }.padding(.top, 10)
+                    
                     if  passwordUsers.contains(password){
                         Button(action:
-                                {ShowingBottomSheet.toggle()})
-                               {
+                                {    showingBottomSheet.toggle()})
+                        {
                             VStack{
                                 Spacer()
                                 
@@ -249,13 +261,21 @@ struct PhoneNumber: View {
                             
                             
                         }
-                               .sheet(isPresented: $ShowingBottomSheet)
+                        .sheet(isPresented: $showingBottomSheet)
                         {
-                            
-                            //Image("call")
-                            VStack {
-                                VStack{
+                            VStack() {
+                                HStack {
                                     Spacer()
+                                    Button(action: {
+                                        showingBottomSheet.toggle()
+                                    }, label: {
+                                        Image("otmena")
+                                    })
+                                    .padding(.trailing, 320)
+                                }
+                                .padding(.top, 20)
+                                
+                                HStack{
                                     Text("Регистрация")
                                         .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333, opacity: 1))
                                         .font(Font.custom("Rubik-Medium", size: 16))
@@ -263,34 +283,49 @@ struct PhoneNumber: View {
                                         .multilineTextAlignment(.center)
                                         .frame(width: 100, height: 21)
                                         .background(Color.white)
-                                }.padding(.bottom, 680)
-
-                                    .toolbar
-                                                {
-                                        ToolbarItem(placement: .navigationBarLeading)
-                                        {
-                                            Button(action: {
-                                                presentationMode.wrappedValue.dismiss()
-                                            },
-                                                   label: {
-                                                Text("Отмена")
-                                                    .foregroundColor(Color.black)
-                                                
-                                                
-                                            })
-                                        }
-                                    }
-                                    
+                                   
+                                       
+                                        
+                                }.position(x:200, y: 1)
+                               // Spacer()
                                 
+                                HStack
+                                {
+                                    Image("call")
+                                        .frame(width: 64, height: 64)
+                                                    .foregroundColor(.white)
+                                                    .padding(.leading, 153)
+                                                    .padding(.top, 126)
+                                 
+                                    
+                                   
+                                } .position(x:120, y: -180)
+                                HStack
+                                {
+                                    Text("Подтвердите номер телефона")
+                                                .font(.custom("Rubik-Medium", size: 18))
+                                                .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333))
+                                                .kerning(-0.3)
+                                                .multilineTextAlignment(.center)
+                                                .frame(width: 335, height: 23)
+                                                .background(Color.white)
+                                }.position(x:200, y: -225)
+                                HStack
+                                {
+                                   
+                                    Image("confirm")
+                                      
+                                }  .position(x:200, y: -340)
                             }
-                            
                         }
-                               }
-//                    else
-//                    {
-//                        Text("Error")
-//                    }
-                
+                        
+                    }
+                    
+                    //                    else
+                    //                    {
+                    //                        Text("Error")
+                    //                    }
+                    
                 }
                 else{
                     ZStack (alignment: .leading){
@@ -301,13 +336,13 @@ struct PhoneNumber: View {
                         // Add any content here, for example:
                         Text(" Так вы у нас впервые? \n Давайте начнем регистрацию")
                             .foregroundColor(.black)
-                       
-                            
-                                Button(action: {})
-                                {
-                                NavigationLink(destination: RegistrationPage()){
-                                    HStack(){
-                                 Text("Регистрация")
+                        
+                        
+                        Button(action: {})
+                        {
+                            NavigationLink(destination: RegistrationPage()){
+                                HStack(){
+                                    Text("Регистрация")
                                     
                                         .foregroundColor(.white)
                                         .font(.custom("Rubik-Medium", size: 12))
@@ -321,10 +356,10 @@ struct PhoneNumber: View {
                     .padding(.bottom, 60)
                     .frame(width: 335, height: 60)
                     .offset(y:10)
+                    
+                }
                 
-            }
                 
-              
             }
             
             

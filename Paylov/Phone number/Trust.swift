@@ -9,13 +9,13 @@ import SwiftUI
 
 struct Trust: View {
     @State private var isToggled = false
-      
+      @State private var isToggled2 = true
     var body: some View {
 //        ZStack{
 //            Color.blue
 //            .edgesIgnoringSafeArea(.all)
             RoundedRectangle(cornerRadius: 12)
-                       .fill(Color.white.opacity(0.12))
+                       .fill(isToggled ? Color.white : Color.white.opacity(0.12))
                        .frame(width: 345, height: 56)
                        .cornerRadius(8)
                      
@@ -24,8 +24,23 @@ struct Trust: View {
                        .padding(.top, 250)
                        
             HStack{
+                
+                if isToggled
+                {
+                    Image("class")
+                        .padding(.trailing)
+                    Text("Доверять устройству")
+                    .bold(true)
+                        .font(.custom("Rubik-Medium", size: 14))
+                        .foregroundColor(Color.black)
+                        .kerning(-0.3)
+                        .lineSpacing(1.1)
+                        .padding(.trailing, 110)
+                        .padding()
+                }
+                else{
                     Image("smile")
-                    .padding(.trailing)
+                        .padding(.trailing)
                     Text("Доверять устройству")
                     .bold(true)
                         .font(.custom("Rubik-Medium", size: 14))
@@ -34,14 +49,25 @@ struct Trust: View {
                         .lineSpacing(1.1)
                         .padding(.trailing, 110)
                         .padding()
+                }
+                    
+                    
             
                 }.padding(.top, 250)
+            
+            
             HStack {
-                Toggle(isOn :$isToggled){}.padding(.trailing)
+               
+                Toggle(isOn :$isToggled){
+                    
+                }
+                    .padding(.trailing)
                     .padding()
             }.padding(.top, 250)
-        }
-//    }
+            
+            
+      //  }
+    }
 }
 
 struct Trust_Previews: PreviewProvider {
