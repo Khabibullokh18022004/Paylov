@@ -11,20 +11,26 @@ struct RegistrationPage: View {
     
     @State var buttonpressed: Int = 0
     @State var isPressed: Bool = true
+    @State private var name: String = ""
+    @State private var phoneNumber: String = ""
+       
+
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
                     Button(action: {
                       if  isPressed == true
-                        {PhoneNumber()}
+                        {}
                         
-                    }){
+                    })
+                    {
                        
                         Image(systemName: "arrow.left")
                             .foregroundColor(.black)
                     }
                     .padding()
+                    
                     Spacer()
                     Text("Регистрация")
                         .foregroundColor(.black)
@@ -103,7 +109,34 @@ struct RegistrationPage: View {
 
                 }.padding(.bottom, 590)
 
-                
+//                HStack{
+//                    TextField("Name", text: $name)
+//                        .padding(.horizontal, 16)
+//                        .frame(height: 44)
+//                        .background(
+//                            ZStack {
+//                                Rectangle()
+//                                    .foregroundColor(Color(red: 0.969, green: 0.969, blue: 0.969))
+//                                    .cornerRadius(8)
+//                            }
+//                        )
+//                }.padding(.bottom, 600)
+//                HStack{
+//
+//                            TextField("Phone Number", text: $phoneNumber)
+//                                .padding(.horizontal, 16)
+//                                .frame(height: 44)
+//                                .keyboardType(.numberPad)
+//                                .background(
+//                                    ZStack {
+//                                        Rectangle()
+//                                            .foregroundColor(Color(red: 0.969, green: 0.969, blue: 0.969))
+//                                            .cornerRadius(8)
+//                                        }
+//                                )
+//                        }
+//                        .padding(.horizontal, 20)
+//                        .padding(.top, 26)
                 
                 
                 

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D432E67629D19E3500A9B5C9 /* RegistrationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D432E67529D19E3500A9B5C9 /* RegistrationPage.swift */; };
+		D4525B6629EBCA4A00F4F28E /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4525B6529EBCA4A00F4F28E /* SwiftUIView.swift */; };
+		D4525B6929EBCA8400F4F28E /* OneTimeCodeBoxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4525B6829EBCA8400F4F28E /* OneTimeCodeBoxes.swift */; };
+		D4525B6B29EBCA9400F4F28E /* OneTimeCodeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4525B6A29EBCA9400F4F28E /* OneTimeCodeInput.swift */; };
+		D4525B6E29EBCAC900F4F28E /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4525B6D29EBCAC900F4F28E /* String+.swift */; };
 		D474D9AF29E65E6D00599C28 /* LogicTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D9AE29E65E6D00599C28 /* LogicTextField.swift */; };
 		D474D9B129E66C3100599C28 /* Trust.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D9B029E66C3100599C28 /* Trust.swift */; };
 		D474D9B529E6B98000599C28 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D9B429E6B98000599C28 /* Password.swift */; };
@@ -24,6 +28,10 @@
 /* Begin PBXFileReference section */
 		D432E67529D19E3500A9B5C9 /* RegistrationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPage.swift; sourceTree = "<group>"; };
 		D44E551329E3D19B00B9CFCB /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		D4525B6529EBCA4A00F4F28E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		D4525B6829EBCA8400F4F28E /* OneTimeCodeBoxes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeBoxes.swift; sourceTree = "<group>"; };
+		D4525B6A29EBCA9400F4F28E /* OneTimeCodeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeCodeInput.swift; sourceTree = "<group>"; };
+		D4525B6D29EBCAC900F4F28E /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		D463CEAA29E553570071A74A /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Black.ttf"; path = "../../../../../../Downloads/Rubik (2)/static/Rubik-Black.ttf"; sourceTree = "<group>"; };
 		D463CEAB29E553570071A74A /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		D463CEAC29E553570071A74A /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -87,6 +95,33 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		D4525B6429EBCA2A00F4F28E /* otp */ = {
+			isa = PBXGroup;
+			children = (
+				D4525B6529EBCA4A00F4F28E /* SwiftUIView.swift */,
+				D4525B6729EBCA6E00F4F28E /* New Group */,
+			);
+			path = otp;
+			sourceTree = "<group>";
+		};
+		D4525B6729EBCA6E00F4F28E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				D4525B6829EBCA8400F4F28E /* OneTimeCodeBoxes.swift */,
+				D4525B6A29EBCA9400F4F28E /* OneTimeCodeInput.swift */,
+				D4525B6C29EBCAAE00F4F28E /* Utils */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		D4525B6C29EBCAAE00F4F28E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D4525B6D29EBCAC900F4F28E /* String+.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D463CEC829E557920071A74A /* Language */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +139,7 @@
 				D476214829E3450900E6721D /* ErrorNotificationTextField.swift */,
 				D474D9AE29E65E6D00599C28 /* LogicTextField.swift */,
 				D474D9B029E66C3100599C28 /* Trust.swift */,
+				D4525B6429EBCA2A00F4F28E /* otp */,
 			);
 			path = "Phone number";
 			sourceTree = "<group>";
@@ -228,13 +264,17 @@
 			files = (
 				D48EDBA229C1A463008A6704 /* LanguageView.swift in Sources */,
 				D48EDBA029C1A463008A6704 /* PaylovApp.swift in Sources */,
+				D4525B6629EBCA4A00F4F28E /* SwiftUIView.swift in Sources */,
+				D4525B6B29EBCA9400F4F28E /* OneTimeCodeInput.swift in Sources */,
 				D48EDBD629C34A22008A6704 /* Animation.swift in Sources */,
 				D474D9B729E6B99E00599C28 /* PinCode.swift in Sources */,
 				D48EDBAE29C1B4C3008A6704 /* SplashScreenView.swift in Sources */,
+				D4525B6E29EBCAC900F4F28E /* String+.swift in Sources */,
 				D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */,
 				D474D9B129E66C3100599C28 /* Trust.swift in Sources */,
 				D432E67629D19E3500A9B5C9 /* RegistrationPage.swift in Sources */,
 				D474D9AF29E65E6D00599C28 /* LogicTextField.swift in Sources */,
+				D4525B6929EBCA8400F4F28E /* OneTimeCodeBoxes.swift in Sources */,
 				D474D9B529E6B98000599C28 /* Password.swift in Sources */,
 				D476214929E3450900E6721D /* ErrorNotificationTextField.swift in Sources */,
 			);

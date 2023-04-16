@@ -4,8 +4,8 @@ struct PhoneNumber: View {
     @State private var phoneNumberInput = ""
     @State private var shouldShowRegistrationPage = false
     @State private var shouldShowNextButton = false
-    @State private var registeredUsers = ["97-705-24-18", "97-755-21-58"]
-    @State private var passwordUsers = ["qq2980268","4567"]
+    @State private var registeredUsers = ["97-705-24-18", "97-755-21-58", "1"]
+    @State private var passwordUsers = ["qq2980268","4567", "1"]
     @State var isShowingNotification = false
     @State private var isLoading = false
     @State private var password = ""
@@ -14,7 +14,7 @@ struct PhoneNumber: View {
     @State private var pphoneNumberInput: String = ""
     @State var showingBottomSheet = false
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
-    //@Environment(\.presentationMode2) private var presentationMode2: Binding<PresentationMode2>
+    @State private var showProgressView = false
     
     var body: some View {
         NavigationView {
@@ -85,14 +85,12 @@ struct PhoneNumber: View {
                                           .bold()
                                           .foregroundColor(Color.white)
                                       TextField("00-000-00-00", text: $phoneNumberInput)
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle())
                                           .keyboardType(.numberPad)
-                                          .onChange(of: phoneNumberInput )
-                                    { _ in
-                                        if phoneNumberInput.count > 9 {
-                                        phoneNumberInput = String(phoneNumberInput.prefix(9))
-                                    }}
+                                     
                                           .onChange(of: phoneNumberInput) { newValue in
-                                          
+                                            
                                               let numericString = newValue.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
                                               var formattedString = ""
 
@@ -108,8 +106,13 @@ struct PhoneNumber: View {
 
                                               phoneNumberInput = formattedString
                                           }
+                                    
+                                   
+                                    
+                                                       
                                   }.foregroundColor(Color.white)
                                     .padding(.horizontal)
+                                
                             }
                             .frame(width: 345, height: 44)
                             .padding(.top, 26)
@@ -165,7 +168,7 @@ struct PhoneNumber: View {
                 
                 if registeredUsers.contains(phoneNumberInput){
                
-    
+                  
                     VStack{
                         Text(" Пароль")
                             .font(.custom("Rubik-Medium", size: 14))
@@ -262,20 +265,19 @@ struct PhoneNumber: View {
                             
                         }
                         .sheet(isPresented: $showingBottomSheet)
-                        {
-                            VStack() {
-                                HStack {
+                        {   ZStack{
+                            VStack(spacing: 0) {
+                                HStack(alignment: .top) {
                                     Spacer()
                                     Button(action: {
                                         showingBottomSheet.toggle()
                                     }, label: {
                                         Image("otmena")
                                     })
-                                    .padding(.trailing, 320)
+                                    .padding(.top, 40)
                                 }
-                                .padding(.top, 20)
-                                
-                                HStack{
+                                .padding(.trailing, 390.0)
+                                HStack(alignment: .top){
                                     Text("Регистрация")
                                         .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333, opacity: 1))
                                         .font(Font.custom("Rubik-Medium", size: 16))
@@ -283,41 +285,86 @@ struct PhoneNumber: View {
                                         .multilineTextAlignment(.center)
                                         .frame(width: 100, height: 21)
                                         .background(Color.white)
-                                   
-                                       
-                                        
-                                }.position(x:200, y: 1)
-                               // Spacer()
+                                }
+                                .padding(.top, -14)
                                 
-                                HStack
-                                {
+                                // Spacer()
+                                
+                                VStack{
+                                    Spacer()
                                     Image("call")
                                         .frame(width: 64, height: 64)
-                                                    .foregroundColor(.white)
-                                                    .padding(.leading, 153)
-                                                    .padding(.top, 126)
-                                 
-                                    
-                                   
-                                } .position(x:120, y: -180)
-                                HStack
-                                {
+                                        .foregroundColor(.white)
+                                        .padding(.top, 50)
+                                    Spacer()
+                                }.padding(.top, -250)
+                                
+                                
+                                VStack {
                                     Text("Подтвердите номер телефона")
-                                                .font(.custom("Rubik-Medium", size: 18))
-                                                .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333))
-                                                .kerning(-0.3)
-                                                .multilineTextAlignment(.center)
-                                                .frame(width: 335, height: 23)
-                                                .background(Color.white)
-                                }.position(x:200, y: -225)
-                                HStack
-                                {
-                                   
+                                        .font(.custom("Rubik-Medium", size: 18))
+                                        .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333))
+                                        .kerning(-0.3)
+                                        .multilineTextAlignment(.center)
+                                        .frame(width: 335, height: 23)
+                                        .background(Color.white)
+                                    
+                                }
+                                .padding(.top, -200)
+                                
+                                
+                                
+                                VStack {
+                                    Spacer()
                                     Image("confirm")
-                                      
-                                }  .position(x:200, y: -340)
+                                        .frame(width: 335, height: 57)
+                                    Spacer()
+                                }
+                                .padding(.top, -580)
+                                
+                                VStack {
+                                    Text("Код верификации")
+                                        .font(.custom("Rubik-Medium", size: 14))
+                                        .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333))
+                                        .kerning(-0.3)
+                                        .multilineTextAlignment(.center)
+                                        .frame(width: 335, height: 23)
+                                        .background(Color.white)
+                                    
+                                }
+                                .padding(.top, -420).padding(.trailing, 190)
+                                
+                                
+                                
                             }
-                        }
+                            .padding(.horizontal, 20)
+                            Spacer()
+                            VStack{
+                                SwiftUIView()
+                                    .frame(width: 310)
+                            }.padding(.top, 290)
+                            
+                            VStack
+                            {
+                                Text("Отправить код снова через")
+                                    .foregroundColor(Color(red: 0.514, green: 0.565, blue: 0.651))
+                                    .font(.custom("Rubik-Medium", size: 14))
+                                    .lineSpacing(12)
+                                    .kerning(-0.3)
+                                    .frame(width: 184, height: 18)
+                                    .background(Color.white)
+                                    .multilineTextAlignment(.center)
+
+                            }.padding(.top, 180).padding(.trailing, 40)
+                            
+                            HStack
+                            {
+                                Image("timer")
+                                    .frame(width: 64, height: 64)
+                                    .foregroundColor(.white)
+                            }.padding(.top, 180).padding(.leading, 190)
+                            
+                        }.padding(.bottom, 30)}
                         
                     }
                     
@@ -366,19 +413,6 @@ struct PhoneNumber: View {
             
         }
         .navigationBarBackButtonHidden(true)
-    }
-    func formatInputValue(_ value: String) -> String {
-        var formatted = value
-        if formatted.count >= 2 {
-            formatted.insert("-", at: formatted.index(formatted.startIndex, offsetBy: 2))
-        }
-        if formatted.count >= 6 {
-            formatted.insert("-", at: formatted.index(formatted.startIndex, offsetBy: 6))
-        }
-        if formatted.count >= 9 {
-            formatted.insert("-", at: formatted.index(formatted.startIndex, offsetBy: 9))
-        }
-        return formatted
     }
 }
 
