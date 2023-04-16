@@ -13,8 +13,9 @@ struct RegistrationPage: View {
     @State var isPressed: Bool = true
     @State private var name: String = ""
     @State private var phoneNumber: String = ""
-       
 
+    @State var buttonHide: Bool
+    @State var buttonHide1: Bool
     var body: some View {
         NavigationView {
             VStack {
@@ -96,63 +97,49 @@ struct RegistrationPage: View {
                         .foregroundColor(buttonpressed > 1 ? Color("Color2") : .gray)
                 }
                 
+
+                VStack {
+                    HStack {
+                        Text("Имя")
+                            .fontWeight(.bold)
+                        Spacer()
+                    }.padding(.horizontal, -2)
+                    HStack {
+                        VStack {
+                                TextField("Введите ваше имя", text: $name)
+                        }
+                       
+                       
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 330, height: 20)
+                    .padding()
+                    .background(Color.black.opacity(0.07))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                }.padding()
+                
+                VStack {
+                    HStack {
+                        Text("Номер регистрации")
+                            .fontWeight(.bold)
+                        Spacer()
+                    }.padding(.horizontal)
+                    HStack {
+                        VStack {
+                            
+                                TextField("+998 71-200-70-07", text: $phoneNumber)
+                            
+                            
+                        }
+                    }
+                    .foregroundColor(.black)
+                    .frame(width: 330, height: 20)
+                    .padding()
+                    .background(Color.black.opacity(0.07))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                }.padding()
                 Spacer()
-                HStack
-                {
-                    Text("Имя")
-                        .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333))
-                        .font(Font.custom("Rubik-Medium", size: 14))
-                        .kerning(-0.3)
-                        .lineSpacing(1.1 * 14)
-                        .frame(width: 335, height: 18, alignment: .leading)
-                        .background(Color.white)
-
-                }.padding(.bottom, 590)
-
-//                HStack{
-//                    TextField("Name", text: $name)
-//                        .padding(.horizontal, 16)
-//                        .frame(height: 44)
-//                        .background(
-//                            ZStack {
-//                                Rectangle()
-//                                    .foregroundColor(Color(red: 0.969, green: 0.969, blue: 0.969))
-//                                    .cornerRadius(8)
-//                            }
-//                        )
-//                }.padding(.bottom, 600)
-//                HStack{
-//
-//                            TextField("Phone Number", text: $phoneNumber)
-//                                .padding(.horizontal, 16)
-//                                .frame(height: 44)
-//                                .keyboardType(.numberPad)
-//                                .background(
-//                                    ZStack {
-//                                        Rectangle()
-//                                            .foregroundColor(Color(red: 0.969, green: 0.969, blue: 0.969))
-//                                            .cornerRadius(8)
-//                                        }
-//                                )
-//                        }
-//                        .padding(.horizontal, 20)
-//                        .padding(.top, 26)
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+              
             }
         }.navigationBarBackButtonHidden(true)
     }
@@ -162,6 +149,6 @@ struct RegistrationPage: View {
 
 struct RegistrationPage_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationPage()
+        RegistrationPage(buttonHide: true, buttonHide1: true)
     }
 }

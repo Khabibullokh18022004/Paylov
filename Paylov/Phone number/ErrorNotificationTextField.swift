@@ -17,12 +17,12 @@ struct ErrorNotificationTextField: View {
             
             VStack {
 
-                        Button("Submit") {
+                        Button("Error when incorrect password") {
                             if phoneNumber.count != 8 {
                                 showError = true
                             }
                             
-                        }
+                        }.padding(.top, 390)
                         
                     }
                     .animation(.easeOut(duration: 0.3)) // Add animation to the VStack
@@ -56,13 +56,7 @@ struct ErrorNotificationTextField: View {
 
                                             .stroke(Color.white, lineWidth: 2)
                                             .frame(width: 32, height: 32)
-
-                                          
-                                        
-                                            
-                                            
-                                           
-                                         
+                        
                                         Spacer()
                                         HStack
                                         {

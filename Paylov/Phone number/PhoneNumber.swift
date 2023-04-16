@@ -200,7 +200,8 @@ struct PhoneNumber: View {
                         
                         if self.showPassword
                         {
-                            TextField("  Password  ", text: $password  )
+                            
+                            TextField(" Password", text: $password  ).padding()
                                 .foregroundColor(.white)
                             
                                 .frame(width: 345, height: 44)
@@ -217,7 +218,8 @@ struct PhoneNumber: View {
                             
                         }
                         else{
-                            SecureField("  Password  ", text: $password)
+                            
+                            SecureField(" Password", text: $password).padding()
                                 .foregroundColor(.white)
                                 .frame(width: 345, height: 44)
                                 .background(Color.white.opacity(0.12))
@@ -364,6 +366,12 @@ struct PhoneNumber: View {
                                     .foregroundColor(.white)
                             }.padding(.top, 180).padding(.leading, 190)
                             
+                            
+                            VStack
+                            {
+                                ErrorNotificationTextField()
+                            }
+                            
                         }.padding(.bottom, 30)}
                         
                     }
@@ -387,7 +395,7 @@ struct PhoneNumber: View {
                         
                         Button(action: {})
                         {
-                            NavigationLink(destination: RegistrationPage()){
+                            NavigationLink(destination: RegistrationPage(buttonHide: true, buttonHide1: true)){
                                 HStack(){
                                     Text("Регистрация")
                                     
