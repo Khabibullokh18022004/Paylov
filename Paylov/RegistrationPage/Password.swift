@@ -18,13 +18,17 @@ struct Password: View {
     @State var password2: String
     @State var buttonHide: Bool
     @State var buttonHide1: Bool
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
                     Button(action: {
                       if  isPressed == true
-                        {}
+                        {
+                          self.presentationMode.wrappedValue.dismiss()
+
+                      }
                         
                     })
                     {
@@ -175,7 +179,35 @@ struct Password: View {
                 }.padding()
                 Spacer()
                 
-            }
+                VStack
+                {
+                    
+                    VStack
+                    {
+                      
+                    }
+                    Button(action:
+                            {
+//                        buttonpressed()
+                    })
+                    {
+                        
+                        NavigationLink(destination: PinCode()){
+                            ZStack{ RoundedRectangle(cornerRadius: 8)
+                                    .foregroundColor( Color(red: 0.914, green: 0.925, blue: 0.941, opacity: 1.0))
+                                    .frame(width: 335, height: 44)
+                                Text("Продолжить")
+                                    .font(Font.custom("Rubik-Medium", size: 14))
+                                    .foregroundColor(Color(red: 0.749, green: 0.773, blue: 0.82))
+                                    .kerning(-0.3)
+                                    .multilineTextAlignment(.center)
+                                
+                                    .cornerRadius(9)
+                                
+                            }
+                        }
+                    }
+                }}
         }.navigationBarBackButtonHidden(true)
     }
 }

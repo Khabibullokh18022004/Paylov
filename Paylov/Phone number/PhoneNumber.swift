@@ -4,8 +4,8 @@ struct PhoneNumber: View {
     @State private var phoneNumberInput = ""
     @State private var shouldShowRegistrationPage = false
     @State private var shouldShowNextButton = false
-    @State private var registeredUsers = ["97-705-24-18", "97-755-21-58", "1"]
-    @State private var passwordUsers = ["qq2980268","4567", "1"]
+    @State private var registeredUsers = ["97-705-24-18", "97-755-21-58"]
+    @State private var passwordUsers = ["qq2980268","4567"]
     @State var isShowingNotification = false
     @State private var isLoading = false
     @State private var password = ""

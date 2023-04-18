@@ -13,16 +13,18 @@ struct RegistrationPage: View {
     @State var isPressed: Bool = true
     @State private var name: String = ""
     @State private var phoneNumber: String = ""
-
     @State var buttonHide: Bool
     @State var buttonHide1: Bool
+    @Environment(\.presentationMode) var presentationMode
+    @State private var w1 = "Условия пользования"
+    @State private var w2 =  "Политикой конфиденциальности"
+    @State var showingBottomSheet2 = false
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
                     Button(action: {
-                      if  isPressed == true
-                        {}
+                        self.presentationMode.wrappedValue.dismiss()
                         
                     })
                     {
@@ -66,6 +68,7 @@ struct RegistrationPage: View {
                     }
                     Spacer()
                 }
+                
                 .font(.custom("", size: 16))
                 
                 HStack(spacing: 0) {
@@ -96,6 +99,7 @@ struct RegistrationPage: View {
                         .frame(maxWidth: .infinity)
                         .foregroundColor(buttonpressed > 1 ? Color("Color2") : .gray)
                 }
+                .font(.custom("", size: 16))
                 
 
                 VStack {
@@ -108,7 +112,7 @@ struct RegistrationPage: View {
                         VStack {
                                 TextField("Введите ваше имя", text: $name)
                         }
-                       
+               
                        
                     }
                     .foregroundColor(.black)
@@ -123,22 +127,74 @@ struct RegistrationPage: View {
                         Text("Номер регистрации")
                             .fontWeight(.bold)
                         Spacer()
-                    }.padding(.horizontal)
+                    }.padding(.horizontal,-2)
                     HStack {
                         VStack {
-                            
-                                TextField("+998 71-200-70-07", text: $phoneNumber)
-                            
-                            
+                            TextField("+998 71-200-70-07", text: $phoneNumber)
                         }
-                    }
+                        Button(action: {})
+                        {
+                        NavigationLink(destination: PhoneNumber())
+                        {
+                            HStack
+                            {Image("write")}
+                        }
+                        }}
+                    
                     .foregroundColor(.black)
                     .frame(width: 330, height: 20)
                     .padding()
                     .background(Color.black.opacity(0.07))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                }.padding()
+                }
+                .padding()
                 Spacer()
+                
+                
+                VStack
+                {
+                                VStack(spacing: 0) {
+                                    
+                                    
+                                    Text("Нажав “продолжить” вы подтверждаете свое согласие с \(w1) и \(w2)")
+                                    
+                                        .foregroundColor(Color.black)
+                                        .font(Font.custom("Rubik-Regular", size: 12))
+//                                        .kerning(-0.3)
+                                        .padding(.horizontal, 20)
+
+                                       
+                                }.sheet(isPresented: $showingBottomSheet2)
+                    {
+                        Text("hello")
+                    }
+                                
+                          
+                    Button(action:
+                            {
+//                        buttonpressed()
+                    })
+                    {
+                       
+                        NavigationLink(destination: Password(showPassword1: false, showPassword2: false, password1: "", password2: "", buttonHide: false, buttonHide1: false)){
+                            ZStack{
+                                
+                                
+                                RoundedRectangle(cornerRadius: 8)
+                                    .foregroundColor( Color(red: 0.914, green: 0.925, blue: 0.941, opacity: 1.0))
+                                    .frame(width: 335, height: 44)
+                                Text("Продолжить")
+                                    .font(Font.custom("Rubik-Medium", size: 14))
+                                    .foregroundColor(Color(red: 0.749, green: 0.773, blue: 0.82))
+                                    .kerning(-0.3)
+                                    .multilineTextAlignment(.center)
+                                
+                                    .cornerRadius(9)
+                                
+                            }
+                        }
+                    }
+                }
               
             }
         }.navigationBarBackButtonHidden(true)
