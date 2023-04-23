@@ -10,13 +10,25 @@ import SwiftUI
 struct PinCode: View {
     
     @State var buttonpressed: Int = 0
-    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         
         VStack{
             
-        
-        HStack {
+            HStack {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                    
+                })
+                {
+                   
+                    Image(systemName: "arrow.left")
+                        .foregroundColor(.black)
+                }
+                .padding()
+                
+    
             
             Spacer()
             Text("Регистрация")
@@ -40,7 +52,7 @@ struct PinCode: View {
                 buttonpressed = 1
             }) {
                 Text("Пароль")
-                    .foregroundColor(buttonpressed > 1 ? Color("Color1") : (buttonpressed == 1 ? .black : .gray))
+                    .foregroundColor(Color.black)
             }
             Spacer()
             Spacer()
@@ -48,7 +60,7 @@ struct PinCode: View {
                 buttonpressed = 2
             }) {
                 Text("Пин-код")
-                    .foregroundColor(buttonpressed > 1 ? .black : .gray)
+                    .foregroundColor(.black)
             }
             Spacer()
         }
@@ -66,31 +78,31 @@ struct PinCode: View {
                 .foregroundColor(Color("Color2"))
             Rectangle()
                 .frame(width: 110, height: 3)
-                .foregroundColor(buttonpressed > 0 ? Color("Color2") : .gray)
+                .foregroundColor(Color("Color2"))
             Circle()
                 .stroke(style: StrokeStyle(lineWidth: 4))
                 .frame(width: 12)
-                .foregroundColor(buttonpressed > 0 ? Color("Color2") : .gray)
+                .foregroundColor(Color("Color2"))
             Rectangle()
                 .frame(width: 110, height: 3)
-                .foregroundColor(buttonpressed > 1 ? Color("Color2") : .gray)
+                .foregroundColor(Color("Color2"))
             Circle()
                 .stroke(style: StrokeStyle(lineWidth: 4))
                 .frame(width: 12)
-                .foregroundColor(buttonpressed > 1 ? Color("Color2") : .gray)
+                .foregroundColor(Color("Color2"))
             Rectangle()
                 .frame(height: 3)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(buttonpressed > 1 ? Color("Color2") : .gray)
+                .foregroundColor(Color("Color2"))
         }
         .font(.custom("", size: 16))
             Spacer()
-            ZStack {
-                
+            VStack {
+                Home()
                     }
         
     }
-        
+        .navigationBarBackButtonHidden()
     }
 }
 

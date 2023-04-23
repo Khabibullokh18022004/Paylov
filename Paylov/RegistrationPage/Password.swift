@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Password: View {
     @State var buttonpressed: Int = 0
-    @State var isPressed: Bool = true
+    @State var isPressed: Bool = false
     @State private var name: String = ""
     @State private var phoneNumber: String = ""
     @State var showPassword1: Bool
@@ -52,15 +52,16 @@ struct Password: View {
                         buttonpressed = 0
                     }) {
                         Text("Информация")
-                            .foregroundColor(buttonpressed > 0 ? Color("Color1") : .black)
+                            .foregroundColor(.black)
                     }
                     Spacer()
                     Spacer()
                     Button(action: {
                         buttonpressed = 1
-                    }) {
+                    })
+                    {
                         Text("Пароль")
-                            .foregroundColor(buttonpressed > 1 ? Color("Color1") : (buttonpressed == 1 ? .black : .gray))
+                            .foregroundColor(buttonpressed > 1 ? Color("Color1") : (buttonpressed == 1 ?  Color("Color1") : .black))
                     }
                     Spacer()
                     Spacer()
@@ -85,11 +86,11 @@ struct Password: View {
                         .foregroundColor(Color("Color2"))
                     Rectangle()
                         .frame(width: 110, height: 3)
-                        .foregroundColor(buttonpressed > 0 ? Color("Color2") : .gray)
+                        .foregroundColor(Color("Color2") )
                     Circle()
                         .stroke(style: StrokeStyle(lineWidth: 4))
                         .frame(width: 12)
-                        .foregroundColor(buttonpressed > 0 ? Color("Color2") : .gray)
+                        .foregroundColor(Color("Color2") )
                     Rectangle()
                         .frame(width: 110, height: 3)
                         .foregroundColor(buttonpressed > 1 ? Color("Color2") : .gray)
@@ -119,14 +120,7 @@ struct Password: View {
                                 SecureField("Придумайте надежный пароль", text: $password1)
                             }
                         }
-                        .onReceive(password1.publisher.collect()) { newValue in
-                            let filtered = newValue.filter { $0.isNumber }
-                            if filtered.count > 0 && password1 == password2 {
-                                buttonHide1 = false
-                            } else {
-                                buttonHide1 = true
-                            }
-                        }
+
                         Button(action: {
                             showPassword1.toggle()
                         }){
@@ -146,7 +140,7 @@ struct Password: View {
                         Text("Подтвердите пароль")
                             .fontWeight(.bold)
                         Spacer()
-                    }.padding(.horizontal)
+                    }.padding(.horizontal, -2)
                     HStack {
                         VStack {
                             if showPassword2 {
@@ -156,14 +150,15 @@ struct Password: View {
                                 SecureField("Повторно введите пароль", text: $password2)
                             }
                         }
-                        .onReceive(password2.publisher.collect()) { newValue in
-                            let filtered = newValue.filter { $0.isNumber }
-                            if filtered.count > 0 && password2 == password1 {
-                                buttonHide1 = false
-                            } else {
-                                buttonHide1 = true
-                            }
-                        }
+//                        .onReceive(password2.publisher.collect()) { newValue in
+//                            let filtered = newValue.filter { $0.isNumber }
+//                            if filtered.count > 0 && password2 == password1 {
+//
+//                                buttonHide1 = false
+//                            } else {
+//                                buttonHide1 = true
+//                            }
+//                        }
                         Button(action: {
                             showPassword2.toggle()
                         }){
@@ -181,31 +176,30 @@ struct Password: View {
                 
                 VStack
                 {
-                    
-                    VStack
-                    {
-                      
-                    }
+                   
                     Button(action:
                             {
-//                        buttonpressed()
+
+                       
                     })
                     {
-                        
                         NavigationLink(destination: PinCode()){
+                  
+ 
                             ZStack{ RoundedRectangle(cornerRadius: 8)
-                                    .foregroundColor( Color(red: 0.914, green: 0.925, blue: 0.941, opacity: 1.0))
+                                    .foregroundColor(password1 == password2 ? Color(red: 0.106, green: 0.588, blue: 0.518): Color(red: 0.914, green: 0.925, blue: 0.941, opacity: 1.0))
                                     .frame(width: 335, height: 44)
                                 Text("Продолжить")
                                     .font(Font.custom("Rubik-Medium", size: 14))
-                                    .foregroundColor(Color(red: 0.749, green: 0.773, blue: 0.82))
+                                    .foregroundColor(Color.white)
                                     .kerning(-0.3)
                                     .multilineTextAlignment(.center)
                                 
                                     .cornerRadius(9)
-                                
                             }
-                        }
+                        
+                        
+                    }
                     }
                 }}
         }.navigationBarBackButtonHidden(true)

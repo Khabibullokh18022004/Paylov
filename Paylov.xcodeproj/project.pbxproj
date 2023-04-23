@@ -24,6 +24,8 @@
 		D48EDBAE29C1B4C3008A6704 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBAD29C1B4C3008A6704 /* SplashScreenView.swift */; };
 		D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */; };
 		D48EDBD629C34A22008A6704 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBD529C34A22008A6704 /* Animation.swift */; };
+		D4E9487929F5981000BFCEBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E9487829F5981000BFCEBB /* ContentView.swift */; };
+		D4E9487D29F59B7700BFCEBB /* welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E9487C29F59B7700BFCEBB /* welcome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		D48EDBAD29C1B4C3008A6704 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		D48EDBD529C34A22008A6704 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		D4E9487829F5981000BFCEBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D4E9487C29F59B7700BFCEBB /* welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +156,8 @@
 			children = (
 				D432E67529D19E3500A9B5C9 /* RegistrationPage.swift */,
 				D474D9B429E6B98000599C28 /* Password.swift */,
-				D474D9B629E6B99E00599C28 /* PinCode.swift */,
+				D4E9487529F597E500BFCEBB /* pincode */,
+				D4E9487C29F59B7700BFCEBB /* welcome.swift */,
 			);
 			path = RegistrationPage;
 			sourceTree = "<group>";
@@ -194,6 +199,15 @@
 				D48EDBA629C1A466008A6704 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D4E9487529F597E500BFCEBB /* pincode */ = {
+			isa = PBXGroup;
+			children = (
+				D474D9B629E6B99E00599C28 /* PinCode.swift */,
+				D4E9487829F5981000BFCEBB /* ContentView.swift */,
+			);
+			path = pincode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,12 +286,14 @@
 				D48EDBD629C34A22008A6704 /* Animation.swift in Sources */,
 				D474D9B729E6B99E00599C28 /* PinCode.swift in Sources */,
 				D48EDBAE29C1B4C3008A6704 /* SplashScreenView.swift in Sources */,
+				D4E9487929F5981000BFCEBB /* ContentView.swift in Sources */,
 				D4525B6E29EBCAC900F4F28E /* String+.swift in Sources */,
 				D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */,
 				D474D9B129E66C3100599C28 /* Trust.swift in Sources */,
 				D432E67629D19E3500A9B5C9 /* RegistrationPage.swift in Sources */,
 				D474D9AF29E65E6D00599C28 /* LogicTextField.swift in Sources */,
 				D4525B7029EBD07700F4F28E /* Password_1.swift in Sources */,
+				D4E9487D29F59B7700BFCEBB /* welcome.swift in Sources */,
 				D4525B6929EBCA8400F4F28E /* OneTimeCodeBoxes.swift in Sources */,
 				D474D9B529E6B98000599C28 /* Password.swift in Sources */,
 				D476214929E3450900E6721D /* ErrorNotificationTextField.swift in Sources */,

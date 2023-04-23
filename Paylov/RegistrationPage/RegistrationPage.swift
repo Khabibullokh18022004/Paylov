@@ -132,6 +132,23 @@ struct RegistrationPage: View {
                         VStack {
                             TextField("+998 71-200-70-07", text: $phoneNumber)
                         }
+                        .onChange(of: phoneNumber) { newValue in
+                          
+                            let numericString = newValue.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+                            var formattedString = ""
+
+                            for (index, digit) in numericString.enumerated() {
+                                switch index {
+                                case 2, 5, 7:
+                                    formattedString += "-"
+                                    fallthrough
+                                default:
+                                    formattedString.append(digit)
+                                }
+                            }
+
+                            phoneNumber = formattedString
+                        }
                         Button(action: {})
                         {
                         NavigationLink(destination: PhoneNumber())
@@ -172,7 +189,7 @@ struct RegistrationPage: View {
                           
                     Button(action:
                             {
-//                        buttonpressed()
+                        buttonpressed = 0
                     })
                     {
                        
@@ -181,17 +198,18 @@ struct RegistrationPage: View {
                                 
                                 
                                 RoundedRectangle(cornerRadius: 8)
-                                    .foregroundColor( Color(red: 0.914, green: 0.925, blue: 0.941, opacity: 1.0))
+                                    .foregroundColor(phoneNumber.count == 12 ? Color(red: 0.106, green: 0.588, blue: 0.518): Color(red: 0.914, green: 0.925, blue: 0.941, opacity: 1.0))
                                     .frame(width: 335, height: 44)
                                 Text("Продолжить")
                                     .font(Font.custom("Rubik-Medium", size: 14))
-                                    .foregroundColor(Color(red: 0.749, green: 0.773, blue: 0.82))
+                                    .foregroundColor(Color.white)
                                     .kerning(-0.3)
                                     .multilineTextAlignment(.center)
                                 
                                     .cornerRadius(9)
                                 
                             }
+                            
                         }
                     }
                 }
