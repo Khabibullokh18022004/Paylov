@@ -11,7 +11,7 @@ import SwiftUI
 struct PaylovApp: App {
     var body: some Scene {
         WindowGroup {
-           SplashScreenView()
+            SplashScreenView()
         }
     }
 }

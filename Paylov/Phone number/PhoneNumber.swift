@@ -85,8 +85,8 @@ struct PhoneNumber: View {
                                           .bold()
                                           .foregroundColor(Color.white)
                                       TextField("00-000-00-00", text: $phoneNumberInput)
-                                    ProgressView()
-                                        .progressViewStyle(CircularProgressViewStyle())
+//                                    ProgressView()
+//                                        .progressViewStyle(CircularProgressViewStyle())
                                           .keyboardType(.numberPad)
                                      
                                           .onChange(of: phoneNumberInput) { newValue in
@@ -106,6 +106,22 @@ struct PhoneNumber: View {
 
                                               phoneNumberInput = formattedString
                                           }
+                                    if phoneNumberInput.count == 12 {
+                                        if isLoading == false {
+                                            ProgressView()
+                                                .progressViewStyle(CircularProgressViewStyle())
+                                                .foregroundColor(.blue)
+                                                .padding(.trailing, 0)
+                                                .onAppear{
+                                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                                        isLoading = true
+                                                        
+                                                    }
+                                                    
+                                                }
+                                        }
+                                        
+                                    }
                                     
                                    
                                     

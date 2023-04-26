@@ -19,6 +19,7 @@ struct RegistrationPage: View {
     @State private var w1 = "Условия пользования"
     @State private var w2 =  "Политикой конфиденциальности"
     @State var showingBottomSheet2 = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -183,7 +184,34 @@ struct RegistrationPage: View {
                                        
                                 }.sheet(isPresented: $showingBottomSheet2)
                     {
-                        Text("hello")
+                        HStack(alignment: .top) {
+                            Spacer()
+                            Button(action: {
+                                showingBottomSheet2.toggle()
+                            }, label: {
+                                Image("otmena")
+                            })
+                            .padding(.top, 40)
+                            .padding(.leading, -360)
+                        }
+                        VStack
+                        {
+                            Text("Политика конфиденциальности")
+                                .font(.custom("Rubik-SemiBold", size: 20))
+                                
+                                .foregroundColor(Color(red: 0.2, green: 0.251, blue: 0.333))
+                                .kerning(-0.3)
+                                .lineSpacing(1.1)
+                                .frame(width: 317, height: 26)
+                                .background(Color.white)
+                        }.padding(.top, 30)
+                        VStack{
+                            ScrollView {
+                                Text("Мониторинг платежей обеспечивает подробный обзор всех операций по картам. Вы сможете отслеживать не только платежи и переводы выполненные через PAYLOV но еще все другие входящие и изходящие средства с ваших карт.   Для обмена водительских прав старого образца нет необходимости предоставлять экзаменационный лист, обновить права можно в центрах госуслуг \"Единое окно\". Для этого требуются паспорт, водительское удостоверение старого образца и талон к нему. Срок замены водительских удостоверений старого образца на новые продлен до 31 декабря 2022 года. Статья 135. Управление транспортным средствами лицами, не имеющими документов, предусмотренных существующими правилами дорожного движения наложение штрафов в сумма 1 БРВ (270 000 UZS)  Мониторинг платежей обеспечивает подробный обзор всех операций по картам. Вы сможете отслеживать не только платежи и переводы выполненные через PAYLOV но еще все другие входящие и изходящие средства с ваших карт.   Для обмена водительских прав старого образца нет необходимости предоставлять экзаменационный лист, обновить права можно в центрах госуслуг \"Единое окно\". Для этого требуются паспорт, водительское удостоверение старого образца и талон к нему. Срок замены водительских удостоверений старого образца на новые продлен до 31 декабря 2022 года. Статья 135. Управление транспортным средствами лицами, не имеющими документов, предусмотренных существующими правилами дорожного движения наложение штрафов в сумма 1 БРВ (270 000 UZS)")
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                            }
+                        }
                     }
                                 
                           
@@ -195,8 +223,6 @@ struct RegistrationPage: View {
                        
                         NavigationLink(destination: Password(showPassword1: false, showPassword2: false, password1: "", password2: "", buttonHide: false, buttonHide1: false)){
                             ZStack{
-                                
-                                
                                 RoundedRectangle(cornerRadius: 8)
                                     .foregroundColor(phoneNumber.count == 12 ? Color(red: 0.106, green: 0.588, blue: 0.518): Color(red: 0.914, green: 0.925, blue: 0.941, opacity: 1.0))
                                     .frame(width: 335, height: 44)
@@ -204,10 +230,8 @@ struct RegistrationPage: View {
                                     .font(Font.custom("Rubik-Medium", size: 14))
                                     .foregroundColor(Color.white)
                                     .kerning(-0.3)
-                                    .multilineTextAlignment(.center)
-                                
+                                    .multilineTextAlignment(.center)                                
                                     .cornerRadius(9)
-                                
                             }
                             
                         }
