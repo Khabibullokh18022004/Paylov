@@ -24,10 +24,10 @@
 		D48EDBAE29C1B4C3008A6704 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBAD29C1B4C3008A6704 /* SplashScreenView.swift */; };
 		D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */; };
 		D48EDBD629C34A22008A6704 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48EDBD529C34A22008A6704 /* Animation.swift */; };
+		D4CBC65529F8F16100512D09 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CBC65429F8F16100512D09 /* RootView.swift */; };
+		D4CBC65829F8F1B300512D09 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CBC65729F8F1B300512D09 /* TabBar.swift */; };
 		D4E9487929F5981000BFCEBB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E9487829F5981000BFCEBB /* ContentView.swift */; };
 		D4E9487D29F59B7700BFCEBB /* welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E9487C29F59B7700BFCEBB /* welcome.swift */; };
-		D4E9488029F7D87700BFCEBB /* BottomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E9487F29F7D87700BFCEBB /* BottomTabBarView.swift */; };
-		D4E9488229F7E40E00BFCEBB /* NewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E9488129F7E40E00BFCEBB /* NewTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,10 +65,10 @@
 		D48EDBAD29C1B4C3008A6704 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		D48EDBB329C1EEC6008A6704 /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		D48EDBD529C34A22008A6704 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		D4CBC65429F8F16100512D09 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		D4CBC65729F8F1B300512D09 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D4E9487829F5981000BFCEBB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D4E9487C29F59B7700BFCEBB /* welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcome.swift; sourceTree = "<group>"; };
-		D4E9487F29F7D87700BFCEBB /* BottomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarView.swift; sourceTree = "<group>"; };
-		D4E9488129F7E40E00BFCEBB /* NewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +187,7 @@
 				D463CEC829E557920071A74A /* Language */,
 				D463CECA29E558080071A74A /* Phone number */,
 				D474D9B829E6B9A600599C28 /* RegistrationPage */,
-				D4E9487E29F7D79400BFCEBB /* TabBar */,
+				D4CBC65329F8EE6700512D09 /* Views */,
 				D463CEC629E5539B0071A74A /* Info.plist */,
 				D48EDBA329C1A466008A6704 /* Assets.xcassets */,
 				D48EDBA529C1A466008A6704 /* Preview Content */,
@@ -203,6 +203,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D4CBC65329F8EE6700512D09 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4CBC65429F8F16100512D09 /* RootView.swift */,
+				D4CBC65629F8F18600512D09 /* Custom Tab Bar */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D4CBC65629F8F18600512D09 /* Custom Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				D4CBC65729F8F1B300512D09 /* TabBar.swift */,
+			);
+			path = "Custom Tab Bar";
+			sourceTree = "<group>";
+		};
 		D4E9487529F597E500BFCEBB /* pincode */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,15 +228,6 @@
 				D4E9487C29F59B7700BFCEBB /* welcome.swift */,
 			);
 			path = pincode;
-			sourceTree = "<group>";
-		};
-		D4E9487E29F7D79400BFCEBB /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				D4E9488129F7E40E00BFCEBB /* NewTab.swift */,
-				D4E9487F29F7D87700BFCEBB /* BottomTabBarView.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,14 +310,14 @@
 				D4525B6E29EBCAC900F4F28E /* String+.swift in Sources */,
 				D48EDBB429C1EEC6008A6704 /* PhoneNumber.swift in Sources */,
 				D474D9B129E66C3100599C28 /* Trust.swift in Sources */,
+				D4CBC65529F8F16100512D09 /* RootView.swift in Sources */,
 				D432E67629D19E3500A9B5C9 /* RegistrationPage.swift in Sources */,
-				D4E9488229F7E40E00BFCEBB /* NewTab.swift in Sources */,
+				D4CBC65829F8F1B300512D09 /* TabBar.swift in Sources */,
 				D474D9AF29E65E6D00599C28 /* LogicTextField.swift in Sources */,
 				D4525B7029EBD07700F4F28E /* Password_1.swift in Sources */,
 				D4E9487D29F59B7700BFCEBB /* welcome.swift in Sources */,
 				D4525B6929EBCA8400F4F28E /* OneTimeCodeBoxes.swift in Sources */,
 				D474D9B529E6B98000599C28 /* Password.swift in Sources */,
-				D4E9488029F7D87700BFCEBB /* BottomTabBarView.swift in Sources */,
 				D476214929E3450900E6721D /* ErrorNotificationTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -148,7 +148,6 @@ struct PhoneNumber: View {
                                         .frame(width: 269, height: 18)
                                         .padding(.trailing, 150)
                                 }
-                                
                                 .padding(.all, 16)
                                 .background(Color.clear)
                                 

@@ -111,7 +111,7 @@ struct LockScreen : View {
                 .foregroundColor(.white)
                 .font(.title2)
                 .fontWeight(.heavy)
-                .padding(.top,120)
+                .padding(.top,20)
             
             HStack(spacing: 27){
                 
